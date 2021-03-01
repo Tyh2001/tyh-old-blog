@@ -14,12 +14,6 @@ const routes = [
         name: 'home',
         component: () => import('@/views/home')
       },
-      // 技术文档
-      {
-        path: '/document',
-        name: 'document',
-        component: () => import('@/views/document')
-      },
       // 我的动态
       {
         path: '/dynamic',

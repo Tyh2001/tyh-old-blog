@@ -10,10 +10,10 @@
 
       <!-- 导航列表 -->
       <ul>
-        <li @click="$router.push('/document')">技术文档</li>
+        <li @click="$router.push('/')">首页</li>
         <li @click="$router.push('/dynamic')">我的动态</li>
         <li>测试测试</li>
-        <li>设置设置</li>
+        <li>测试测试</li>
       </ul>
 
       <!-- 关于我 -->
@@ -49,8 +49,6 @@ export default {
 
 <style lang="less" scoped>
 .navigationBar {
-  position: fixed;
-  z-index: 999;
   width: 100%;
   height: 70px;
   background: #23282d;
@@ -79,7 +77,6 @@ export default {
   ul {
     display: flex;
     list-style: none;
-    // margin-left: 140px;
     li {
       margin-left: 40px;
       cursor: pointer;
