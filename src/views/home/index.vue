@@ -4,7 +4,8 @@
       <!-- 主页说明 -->
       <div class="explain">
         <div class="PhotoBox">
-          <img class="myPhoto" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcWEHi*bNa1zTU8Ud6fRbryqslni7.LUdupyu2rLisfWEsJavkzpgKnpT6TJQaket6jpv6cxe4ah4g2CMJ3fXreI!/r" alt="">
+          <!-- <img class="myPhoto" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcWEHi*bNa1zTU8Ud6fRbryqslni7.LUdupyu2rLisfWEsJavkzpgKnpT6TJQaket6jpv6cxe4ah4g2CMJ3fXreI!/r" alt=""> -->
+          <img class="myPhoto" src="./images/头像02.jpg" alt="">
           <div class="title">
             <h1>Hi,前端伙伴！</h1>
             <div>—— 这是一个还凑合的个人网站 ——</div>
