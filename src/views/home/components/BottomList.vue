@@ -5,7 +5,7 @@
     <div class="content1">
       <div class="listC1">“ 慢慢来吧 谁都有努力的过程 ”</div>
       <div class="listE1">“ man man lai ba shei dou you nu li de guo cheng ”</div>
-      <img class="image1" src="../images/下方4.png">
+      <img class="image1" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1Wn8LQ8L7IVMuua*LlMq7yHuu6mKZBpXmmaS1ETexiFkjx3dIJt7dMUgYPezer2UMg!/r">
     </div>
 
     <!-- 第二段内容 -->
@@ -14,12 +14,12 @@
         <div class="listC2">“ 我们在很久很久以前 就没有以后了 ”</div>
         <div class="listE2">“ wo men zai hen jiu hen jiu yi qian jiu mei you yi hou le ”</div>
       </div>
-      <img class="image2" src="../images/唯美小熊.png">
+      <img class="image2" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1UCYxNno0ntbLq9bxHtzwI9rCc.1BaitjaxqnbIC3gnXaOJBMDcAjmUyxATfBlTNPs!/r">
     </div>
 
     <!-- 第三段内容 -->
     <div class="content3">
-      <img class="image3" src="../images/最爱的人2.png">
+      <img class="image3" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1V2jp9MjMDCrmmRsE3MBuRdxDTthIySfocYA4zWVEvk5FmYrzz4ugotqg0.0OVFcfM!/r">
       <div class="text">
         <div class="listC3">“ 愿我最爱的人 也最爱我 ”</div>
         <div class="listE3">“ yuan wo zui ai de ren ye zui ai wo ”</div>
@@ -33,7 +33,7 @@
         <p class="listE4">“ zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui ”</p>
       </div>
       <div class="imgBox">
-        <img class="image4" src="../images/碌碌无为4.png" alt="">
+        <img class="image4" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1XYrM3BWXZluTuyuPHd5ArS2is91J4.xP5s60KfihPoutaY87db.B7o5qKYNwqeyfw!/r" alt="">
       </div>
     </div>
 

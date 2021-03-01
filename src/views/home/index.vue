@@ -3,7 +3,7 @@
     <!-- 主页说明 -->
     <div class="explain">
       <div class="PhotoBox">
-        <img class="myPhoto" src="./images/头像02.jpg" alt="">
+        <img class="myPhoto" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH.WlbL0Nrtw5DOpFddNOqa0!/r">
         <div class="title">
           <h1>Hi,前端伙伴！</h1>
           <div>—— 这是一个还凑合的个人网站 ——</div>
@@ -83,7 +83,11 @@ export default {
   height: 450px;
   position: relative;
   overflow: hidden;
-  background-color: #4693db;
+  background-image: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lnftnbrRViUAZMD8IYu1L63abPiJOW8z9.ESeAD4Mn5nzs9wA6k*uJiEUBuCPqEQY!/r);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   // 头像
   .PhotoBox {
     display: flex;
@@ -106,7 +110,7 @@ export default {
         color: #f0efef;
       }
       div {
-        color: rgb(29, 29, 29);
+        color: #fff;
       }
     }
   }
