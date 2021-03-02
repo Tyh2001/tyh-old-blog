@@ -16,10 +16,20 @@
 
       <!-- 关于我 -->
       <div class="aboutMe">
+
+        <!-- 黑暗主题开关 -->
+        <el-switch
+          v-model="theme"
+          active-color="#6e40c9"
+          inactive-color="#58b0fb"
+          @change="swithcChange"
+        />
+
+        <!-- 下拉菜单 -->
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
             关于我
-            <i class="el-icon-arrow-down el-icon--right"></i>
+            <i class="el-icon-arrow-down el-icon--right" />
           </span>
           <el-dropdown-menu slot="dropdown" style="text-decoration: none">
             <el-dropdown-item>
@@ -41,7 +51,19 @@
 
 <script>
 export default {
-  name: 'layoutIndex'
+  name: 'layoutIndex',
+  data () {
+    return {
+      // theme: true // 开关状态
+      theme: this.$store.state.theme // 开关状态
+    }
+  },
+  methods: {
+    // 改变主题背景
+    swithcChange () {
+      this.$store.commit('changeTheme', this.theme)
+    }
+  }
 }
 </script>
 
@@ -84,9 +106,17 @@ export default {
   .aboutMe {
     cursor: pointer;
     margin-right: 40px;
+    .el-switch {
+      margin-right: 20px;
+    }
     .el-dropdown-link {
       color: #dfdfdf;
     }
+  }
+}
+@media screen and (max-width: 640px) {
+  li {
+    display: none;
   }
 }
 </style>

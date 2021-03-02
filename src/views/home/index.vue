@@ -14,9 +14,15 @@
     </div>
 
     <!-- 中间部分 -->
-    <div class="middleBox">
+    <div
+      class="middleBox"
+      :style="$store.state.theme ? 'background: #0d1117;' : 'background: #eceff1;'"
+    >
       <!-- 新的一天 -->
-      <p class="newDay">
+      <p
+        class="newDay"
+        :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
+      >
         <span>“</span>
         A new day begins with npm run dev and npm run serve.
         <span>”</span>
@@ -30,9 +36,13 @@
           :key="index"
         >
           <fieldset>
-            <legend>{{ say.title }}</legend>
+            <legend
+              :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
+            >{{ say.title }}</legend>
           </fieldset>
-          <p>{{ say.content }}</p>
+          <p
+            :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
+          >{{ say.content }}</p>
         </div>
       </div>
 
@@ -40,6 +50,7 @@
       <div class="toBottom">
         <i
           class="el-icon-d-arrow-right"
+          :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
           @click="toBottom"
         />
       </div>
@@ -136,13 +147,11 @@ export default {
 // 中间部分
 .middleBox {
   height: 500px;
-  background-color: #eceff1;
   // 新的一天
   .newDay {
     padding-top: 60px;
     text-align: center;
     font-size: 23px;
-    color: #32373c;
     font-weight: 600;
     span {
       font-size: 35px;

@@ -1,5 +1,12 @@
 <template>
-  <div id="BottomList">
+  <div
+    id="BottomList"
+    :style="
+      $store.state.theme
+        ? 'background: #0d1117;'
+        : 'background: #eceff1;'
+    "
+  >
 
     <!-- 第一段内容 -->
     <div class="content1">
@@ -29,16 +36,44 @@
     <!-- 第四段内容 -->
     <div class="content4">
       <div class="text">
-        <p class="listC4">“ 最怕你一生碌碌无为，还安慰自己平凡可贵 ”</p>
-        <p class="listE4">“ zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui ”</p>
+        <p
+          class="listC4"
+          :style="
+            $store.state.theme
+              ?'color: #c9d1d9;'
+              : 'color: #32373c;'
+          "
+        >
+          “ 最怕你一生碌碌无为，还安慰自己平凡可贵 ”
+        </p>
+        <p
+          class="listE4"
+          :style="
+            $store.state.theme
+              ? 'color: #c9d1d9;'
+              : 'color: #32373c;'
+          "
+        >
+          “ zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui ”
+        </p>
       </div>
       <div class="imgBox">
-        <img class="image4" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1XYrM3BWXZluTuyuPHd5ArS2is91J4.xP5s60KfihPoutaY87db.B7o5qKYNwqeyfw!/r" alt="">
+        <img
+          class="image4"
+          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1XYrM3BWXZluTuyuPHd5ArS2is91J4.xP5s60KfihPoutaY87db.B7o5qKYNwqeyfw!/r"
+        >
       </div>
     </div>
 
     <!-- 页脚 -->
-    <div class="footer">
+    <div
+      class="footer"
+      :style="
+        $store.state.theme
+          ? 'background: #24282f;'
+          : 'background: #f7f7f7;'
+      "
+    >
       ——
       <img src="../../../../public/上方小图标.png">
       此网站 2021-2-28 22:22 发布上线 Tyh.
@@ -154,7 +189,7 @@ export default {
   margin-top: 60px;
   border-top: 1px solid #dfdfdf;
   height: 230px;
-  background: #f7f7f7;
+  // background: #f7f7f7;
   color: #0073bb;
   display: flex;
   justify-content: center;
