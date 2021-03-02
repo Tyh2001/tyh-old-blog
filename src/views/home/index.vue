@@ -7,6 +7,7 @@
         <div class="title">
           <h1>Hi,前端伙伴！</h1>
           <div>—— 这是一个还凑合的个人网站 ——</div>
+          <h3>俱往矣i</h3>
         </div>
       </div>
       <Time />
@@ -88,6 +89,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  user-select: none;
   // 头像
   .PhotoBox {
     display: flex;
@@ -111,6 +113,10 @@ export default {
       }
       div {
         color: #fff;
+      }
+      h3 {
+        color: #fff;
+        padding-top: 20px;
       }
     }
   }

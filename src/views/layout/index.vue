@@ -4,8 +4,6 @@
     <div class="navigationBar">
       <div class="myName" @click="$router.push('/')">
         <span class="name1">Tyh.</span>
-        &nbsp;&nbsp;
-        <span class="name2">俱往矣i</span>
       </div>
 
       <!-- 导航列表 -->
@@ -47,6 +45,18 @@ export default {
 }
 </script>
 
+<style>
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../style/image/主背景.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+</style>
+
 <style lang="less" scoped>
 .navigationBar {
   width: 100%;
@@ -66,9 +76,6 @@ export default {
       font-size: 30px;
       font-weight: 600;
     }
-    .name2 {
-      font-size: 18px;
-    }
   }
   .myName:hover {
     color: skyblue;
@@ -82,7 +89,7 @@ export default {
       cursor: pointer;
     }
     li:hover {
-      color: chocolate;
+      color: rgb(255,130,0);
     }
   }
   // 关于我

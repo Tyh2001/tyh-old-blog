@@ -2,12 +2,3 @@
   margin: 0;
   padding: 0;
 }
-body {
-  width: 100%;
-  height: 100%;
-  background-image: url('./image/主背景.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}

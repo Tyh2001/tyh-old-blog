@@ -58,6 +58,7 @@ export default {
   margin-top: 550px;
   background-color: #eceff1;
   overflow-x: hidden;
+  user-select: none;
 }
 // 第一段内容
 .content1 {
