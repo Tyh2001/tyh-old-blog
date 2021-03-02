@@ -9,7 +9,7 @@
       <!-- 导航列表 -->
       <ul>
         <li @click="$router.push('/')">首页</li>
-        <li @click="$router.push('/dynamic')">我的动态</li>
+        <li @click="$router.push('/blog')">我的动态</li>
         <li>测试测试</li>
         <li>测试测试</li>
       </ul>
@@ -46,16 +46,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#layoutIndex {
-  width: 100%;
-  height: 100%;
-  // background-image: url('../../style/image/主背景.jpg');
-  background-image: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcSaKWOmFSJoMJUY45e6kJ2JByoQl1J4TuWYUaHXDjpOZ2oQf3lWi5Jsg5CBTksk*woFnqfUK004xZ*hzK0s3m5c!/r);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
 .navigationBar {
   width: 100%;
   height: 70px;

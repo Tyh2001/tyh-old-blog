@@ -16,15 +16,22 @@ const routes = [
       },
       // 我的动态
       {
-        path: '/dynamic',
-        name: 'dynamic',
-        component: () => import('@/views/dynamic')
+        path: '/blog',
+        name: 'blog',
+        component: () => import('@/views/blog')
+      },
+      // 404
+      {
+        path: '*',
+        name: '404',
+        component: () => import('@/views/404')
       }
     ]
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

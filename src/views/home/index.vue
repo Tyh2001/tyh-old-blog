@@ -38,7 +38,10 @@
 
       <!-- 向下的按钮 -->
       <div class="toBottom">
-        <i class="el-icon-d-arrow-right" />
+        <i
+          class="el-icon-d-arrow-right"
+          @click="toBottom"
+        />
       </div>
     </div>
 
@@ -72,6 +75,15 @@ export default {
           content: '如果眼下还是一团零星之火，那运筹帷幄之后，迎面东风，就是一场烈焰燎原吧，那必定会是一番尽情的燃烧。'
         }
       ]
+    }
+  },
+  methods: {
+    // 点击向下滚动效果
+    toBottom () {
+      window.scrollTo({
+        top: 1500,
+        behavior: 'smooth'
+      })
     }
   }
 }

@@ -39,7 +39,10 @@
 
     <!-- 页脚 -->
     <div class="footer">
-      <p>—— 此网站 2021-2-28 22:22 发布上线 — Tyh. ——</p>
+      ——
+      <img src="../../../../public/上方小图标.png">
+      此网站 2021-2-28 22:22 发布上线 Tyh.
+      ——
     </div>
 
   </div>
@@ -156,5 +159,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  img {
+    width: 20px;
+    margin:0 6px 0 6px;
+  }
 }
 </style>
