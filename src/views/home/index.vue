@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- 主页说明 -->
-    <div class="explain">
+    <div
+      class="explain"
+      :style="homePageImg"
+    >
       <div class="PhotoBox">
         <img class="myPhoto" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH.WlbL0Nrtw5DOpFddNOqa0!/r">
         <div class="title">
@@ -62,6 +65,8 @@
 </template>
 
 <script>
+// 获取主页背景图
+import { getHomePage } from '@/api/homePage'
 import Time from './components/Time' // 时间罗盘
 import BottomList from './components/BottomList' // 底部图片文案
 export default {
@@ -85,8 +90,12 @@ export default {
           title: '星辰大海',
           content: '如果眼下还是一团零星之火，那运筹帷幄之后，迎面东风，就是一场烈焰燎原吧，那必定会是一番尽情的燃烧。'
         }
-      ]
+      ],
+      homePageImg: '' // 主页背景图
     }
+  },
+  created () {
+    this.loadgetHomePage() // 获取主页背景图
   },
   methods: {
     // 点击向下滚动效果
@@ -95,6 +104,11 @@ export default {
         top: 1500,
         behavior: 'smooth'
       })
+    },
+    // 获取主页背景图
+    async loadgetHomePage () {
+      const { data } = await getHomePage()
+      this.homePageImg = data.url
     }
   }
 }
@@ -107,7 +121,6 @@ export default {
   height: 450px;
   position: relative;
   overflow: hidden;
-  background-image: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lnftnbrRViUAZMD8IYu1L63abPiJOW8z9.ESeAD4Mn5nzs9wA6k*uJiEUBuCPqEQY!/r);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

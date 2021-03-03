@@ -22,27 +22,41 @@
           v-model="theme"
           active-color="#6e40c9"
           inactive-color="#58b0fb"
+          divided
           @change="swithcChange"
         />
 
         <!-- 下拉菜单 -->
-        <el-dropdown trigger="click">
+        <el-dropdown trigger="click" v-if="userInfo">
           <span class="el-dropdown-link">
-            关于我
-            <i class="el-icon-arrow-down el-icon--right" />
+            <img
+              class="photo"
+              :src="userInfo.userPhoto"
+            >
+            <span class="username">
+              {{ userInfo.name }}
+            </span>
+            <i class="el-icon-caret-bottom" />
           </span>
-          <el-dropdown-menu slot="dropdown" style="text-decoration: none">
-            <el-dropdown-item>
-              <a style="text-decoration: none" href="https://gitee.com/tyh666999">Gitee</a>
-            </el-dropdown-item>
-            <el-dropdown-item>
-              <a style="text-decoration: none" href="https://gitee.com/tyh666999">Github</a>
-            </el-dropdown-item>
-            <el-dropdown-item>
-              <a style="text-decoration: none" href="https://music.163.com/#/song?id=1487210999">网易云音乐</a>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>空</el-dropdown-item>
+            <el-dropdown-item>空</el-dropdown-item>
+            <el-dropdown-item>空</el-dropdown-item>
+            <el-dropdown-item
+              @click.native="outLogin"
+            >
+              退出登录
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
+
+        <span
+          class="pleaseOnLogin"
+          v-else
+          @click="$router.push('login')"
+        >
+          请登录
+        </span>
       </div>
     </div>
     <router-view />
@@ -55,13 +69,30 @@ export default {
   data () {
     return {
       // theme: true // 开关状态
-      theme: this.$store.state.theme // 开关状态
+      theme: this.$store.state.theme, // 开关状态
+      userInfo: this.$store.state.userInfo
     }
   },
   methods: {
     // 改变主题背景
     swithcChange () {
       this.$store.commit('changeTheme', this.theme)
+    },
+    // 退出登录
+    outLogin () {
+      this.$confirm('退出账号部分功能将不能使用，确定退出吗?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        // 退出后删除本地存储
+        window.localStorage.removeItem('userInfo')
+        this.$router.go(0)
+        this.$message({
+          type: 'success',
+          message: '退出成功!'
+        })
+      })
     }
   }
 }
@@ -102,14 +133,34 @@ export default {
       color: rgb(255,130,0);
     }
   }
-  // 关于我
+  // 右边下拉菜单
   .aboutMe {
     cursor: pointer;
     margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .el-switch {
       margin-right: 20px;
     }
     .el-dropdown-link {
+      color: #dfdfdf;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .photo {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        margin-right: 6px;
+      }
+      // 用户昵称
+      .username {
+        color: #dfdfdf;
+        font-size: 12px;
+      }
+    }
+    .pleaseOnLogin {
       color: #dfdfdf;
     }
   }
