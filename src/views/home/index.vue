@@ -19,12 +19,12 @@
     <!-- 中间部分 -->
     <div
       class="middleBox"
-      :style="$store.state.theme ? 'background: #0d1117;' : 'background: #eceff1;'"
+      :style="theme ? 'background: #0d1117;' : 'background: #eceff1;'"
     >
       <!-- 新的一天 -->
       <p
         class="newDay"
-        :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
+        :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
       >
         <span>“</span>
         A new day begins with npm run dev and npm run serve.
@@ -40,11 +40,11 @@
         >
           <fieldset>
             <legend
-              :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
+              :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
             >{{ say.title }}</legend>
           </fieldset>
           <p
-            :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
+            :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
           >{{ say.content }}</p>
         </div>
       </div>
@@ -53,7 +53,7 @@
       <div class="toBottom">
         <i
           class="el-icon-d-arrow-right"
-          :style="$store.state.theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
+          :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
           @click="toBottom"
         />
       </div>
@@ -69,11 +69,16 @@
 import { getHomePage } from '@/api/homePage'
 import Time from './components/Time' // 时间罗盘
 import BottomList from './components/BottomList' // 底部图片文案
+import { mapState } from 'vuex' // 映射 vuex
 export default {
   name: 'homeeIndex',
   components: {
     Time,
     BottomList
+  },
+  computed: {
+    // 获取到 vuex 中主题状态
+    ...mapState(['theme'])
   },
   data () {
     return {

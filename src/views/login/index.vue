@@ -17,6 +17,7 @@
         v-model="user.userName"
         size="small"
         clearable
+        placeholder="请输入用户名"
       />
 
       <!-- 密码 -->
@@ -26,6 +27,7 @@
         size="small"
         type="password"
         clearable
+        placeholder="请输入密码"
       />
 
       <el-button
@@ -67,11 +69,26 @@ export default {
   data () {
     return {
       user: {
-        userName: 'ceshi1234',
-        userPassword: '12345678'
+        userName: '',
+        userPassword: ''
       },
       loading: false // 按钮 loading
     }
+  },
+  mounted () {
+    this.$notify.info({
+      title: '登录账号',
+      message: (`
+        游客登录测试账号：
+        <br />
+        账号：ceshi1234
+        <br />
+        密码：12345678
+      `),
+      dangerouslyUseHTMLString: true,
+      duration: 0,
+      position: 'top-left'
+    })
   },
   methods: {
     // 登录
@@ -94,15 +111,20 @@ export default {
       } else if (data.user2.userName === name && data.user2.userPassword === pass) {
         const userInfo2 = data.user2
         this.$message({
-          message: '登录成功',
-          type: 'success'
+          message: 'Hi,Tyh!',
+          type: 'success',
+          duration: 1000,
+          showClose: true
         })
 
         // 登录成功后保留用户信息
         this.$store.commit('changeUserInfo', userInfo2)
         this.$router.push('/')
       } else {
-        this.$message.error('登录失败，账号或密码错误')
+        this.$message.error({
+          message: '登录失败，账号或密码错误',
+          duration: 1000
+        })
       }
 
       this.loading = false

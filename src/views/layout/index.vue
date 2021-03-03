@@ -17,17 +17,12 @@
       <!-- 关于我 -->
       <div class="aboutMe">
 
-        <!-- 黑暗主题开关 -->
-        <el-switch
-          v-model="theme"
-          active-color="#6e40c9"
-          inactive-color="#58b0fb"
-          divided
-          @change="swithcChange"
-        />
-
         <!-- 下拉菜单 -->
-        <el-dropdown trigger="click" v-if="userInfo">
+        <el-dropdown
+          trigger="click"
+          v-if="userInfo"
+          :hide-on-click="false"
+        >
           <span class="el-dropdown-link">
             <img
               class="photo"
@@ -41,7 +36,19 @@
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>空</el-dropdown-item>
             <el-dropdown-item>空</el-dropdown-item>
-            <el-dropdown-item>空</el-dropdown-item>
+            <!-- 主题颜色 -->
+            <el-dropdown-item>
+              主题
+              <i :class="theme ? 'el-icon-moon' : 'el-icon-sunny'" />
+              <el-switch
+                v-model="theme"
+                active-color="#6e40c9"
+                inactive-color="#58b0fb"
+                divided
+                @change="swithcChange"
+              />
+            </el-dropdown-item>
+            <!-- 退出登录 -->
             <el-dropdown-item
               @click.native="outLogin"
             >
@@ -55,6 +62,7 @@
           v-else
           @click="$router.push('login')"
         >
+          <i class="el-icon-user" />
           请登录
         </span>
       </div>
@@ -64,13 +72,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex' // 映射 vuex
 export default {
   name: 'layoutIndex',
+  computed: {
+    // 获取到 vuex 中主题状态
+    // ...mapState(['theme']), // 开关状态
+    ...mapState(['userInfo']) // 用户信息
+  },
   data () {
     return {
-      // theme: true // 开关状态
-      theme: this.$store.state.theme, // 开关状态
-      userInfo: this.$store.state.userInfo
+      theme: this.$store.state.theme
     }
   },
   methods: {
@@ -87,11 +99,8 @@ export default {
       }).then(() => {
         // 退出后删除本地存储
         window.localStorage.removeItem('userInfo')
+        // 退出后刷新页面
         this.$router.go(0)
-        this.$message({
-          type: 'success',
-          message: '退出成功!'
-        })
       })
     }
   }
@@ -161,6 +170,7 @@ export default {
       }
     }
     .pleaseOnLogin {
+      font-size: 15px;
       color: #dfdfdf;
     }
   }

@@ -1,13 +1,8 @@
 <template>
   <div
     id="BottomList"
-    :style="
-      $store.state.theme
-        ? 'background: #0d1117;'
-        : 'background: #eceff1;'
-    "
+    :style="theme ? 'background: #0d1117;' : 'background: #eceff1;'"
   >
-
     <!-- 第一段内容 -->
     <div class="content1">
       <div class="listC1">“ 慢慢来吧 谁都有努力的过程 ”</div>
@@ -38,21 +33,13 @@
       <div class="text">
         <p
           class="listC4"
-          :style="
-            $store.state.theme
-              ?'color: #c9d1d9;'
-              : 'color: #32373c;'
-          "
+          :style=" theme ?'color: #c9d1d9;' : 'color: #32373c;'"
         >
           “ 最怕你一生碌碌无为，还安慰自己平凡可贵 ”
         </p>
         <p
           class="listE4"
-          :style="
-            $store.state.theme
-              ? 'color: #c9d1d9;'
-              : 'color: #32373c;'
-          "
+          :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
         >
           “ zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui ”
         </p>
@@ -68,11 +55,7 @@
     <!-- 页脚 -->
     <div
       class="footer"
-      :style="
-        $store.state.theme
-          ? 'background: #24282f;'
-          : 'background: #f7f7f7;'
-      "
+      :style="theme ? 'background: #24282f;' : 'background: #f7f7f7;'"
     >
       ——
       <img src="../../../../public/上方小图标.png">
@@ -84,8 +67,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex' // 映射 vuex
 export default {
-  name: 'BottomList'
+  name: 'BottomList',
+  computed: {
+    // 获取到 vuex 中主题状态
+    ...mapState(['theme'])
+  }
 }
 </script>
 
