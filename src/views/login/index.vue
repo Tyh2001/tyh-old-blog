@@ -90,6 +90,7 @@ export default {
 
         // 登录成功后保留用户信息
         this.$store.commit('changeUserInfo', userInfo1)
+        this.$router.push('/')
       } else if (data.user2.userName === name && data.user2.userPassword === pass) {
         const userInfo2 = data.user2
         this.$message({
@@ -99,12 +100,12 @@ export default {
 
         // 登录成功后保留用户信息
         this.$store.commit('changeUserInfo', userInfo2)
+        this.$router.push('/')
       } else {
         this.$message.error('登录失败，账号或密码错误')
       }
 
       this.loading = false
-      this.$router.push('/')
     },
     // 注册
     onRegister () {
