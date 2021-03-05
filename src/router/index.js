@@ -41,7 +41,6 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
   routes
 })
 
@@ -59,6 +58,8 @@ router.beforeEach((to, from, next) => {
         showClose: true
       })
       return next('/')
+    } else {
+      return next('/login')
     }
   } else {
     return next()
