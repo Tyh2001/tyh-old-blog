@@ -69,8 +69,8 @@ export default {
   data () {
     return {
       user: {
-        userName: '',
-        userPassword: ''
+        userName: '15211111111',
+        userPassword: '12345678'
       },
       loading: false // 按钮 loading
     }

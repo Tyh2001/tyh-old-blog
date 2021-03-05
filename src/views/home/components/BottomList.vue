@@ -7,7 +7,10 @@
     <div class="content1">
       <div class="listC1">“ 慢慢来吧 谁都有努力的过程 ”</div>
       <div class="listE1">“ man man lai ba shei dou you nu li de guo cheng ”</div>
-      <img class="image1" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1Wn8LQ8L7IVMuua*LlMq7yHuu6mKZBpXmmaS1ETexiFkjx3dIJt7dMUgYPezer2UMg!/r">
+      <img
+        class="image1"
+        src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1Wn8LQ8L7IVMuua*LlMq7yHuu6mKZBpXmmaS1ETexiFkjx3dIJt7dMUgYPezer2UMg!/r"
+      >
     </div>
 
     <!-- 第二段内容 -->
@@ -16,12 +19,18 @@
         <div class="listC2">“ 我们在很久很久以前 就没有以后了 ”</div>
         <div class="listE2">“ wo men zai hen jiu hen jiu yi qian jiu mei you yi hou le ”</div>
       </div>
-      <img class="image2" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1UCYxNno0ntbLq9bxHtzwI9rCc.1BaitjaxqnbIC3gnXaOJBMDcAjmUyxATfBlTNPs!/r">
+      <img
+        class="image2"
+        src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1UCYxNno0ntbLq9bxHtzwI9rCc.1BaitjaxqnbIC3gnXaOJBMDcAjmUyxATfBlTNPs!/r"
+      >
     </div>
 
     <!-- 第三段内容 -->
     <div class="content3">
-      <img class="image3" src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1V2jp9MjMDCrmmRsE3MBuRdxDTthIySfocYA4zWVEvk5FmYrzz4ugotqg0.0OVFcfM!/r">
+      <img
+        class="image3"
+        src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1V2jp9MjMDCrmmRsE3MBuRdxDTthIySfocYA4zWVEvk5FmYrzz4ugotqg0.0OVFcfM!/r"
+      >
       <div class="text">
         <div class="listC3">“ 愿我最爱的人 也最爱我 ”</div>
         <div class="listE3">“ yuan wo zui ai de ren ye zui ai wo ”</div>
@@ -62,6 +71,11 @@
       此网站 2021-2-28 22:22 发布上线 Tyh.
       ——
     </div>
+
+    <!-- 返回顶部 -->
+    <el-backtop>
+      <i class="tyh tyh-huojian" />
+    </el-backtop>
 
   </div>
 </template>

@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "tyh";
+  src: url("//at.alicdn.com/t/font_2403041_ekvcr9y0yb6.eot?t=1614940727369"); /* IE9 */
+  src: url("//at.alicdn.com/t/font_2403041_ekvcr9y0yb6.eot?t=1614940727369#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQYAAsAAAAACGgAAAPLAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqEaIQMATYCJAMQCwoABCAFhDEHPxs5BxHVm1/JfibYthLyh418ZAkfSWeC5zGnvm/JqSuXeYScjABvQEi3pRpdt+YcsFERqiR7vvPoH/JUyC9NBwHw/99P/SuBHb82APjRbxkgXRZpIx1QJw2rBHYGMiCfCmxjp6q1d0MAQwq5kcpVazfGQWMNEkB6duvSDidnQrckCw6Cp2amRqZj41gTrMvAtPD78omC4oCFrbBG1u9cpSPl39rvsqux/rG09DHo+RyAMA8UkBvQIF1rXe1RsS83CqNFaooCjv2JBW/tt6/eZff7iTkLcggx9o9ngXiwUBAUhf0K3toulapfQQWBd9kTsADekBkOEA2cAP5i6aLmae1gEnRwZIwESbCEekfbhkDNHmjEXBOk5m40ZnVcUzN7PdbYDdHhk9bFtlk01LVMaIhyJyW2cGveFjxizYlkvfh4ZtPYa9aeTLGXncrWJ+T27cb6zp0mbpMNk3L53Hv3fPbdu33N2A0HJh3aJAuPTjzcLtPEuI0HJ+5fz6/cx4irvI0tF1NWJfrcJvGWz1tWfGE63ibi7VlWErW2lPbikyYLjkw6Nm4uoUlHweuSoaTFzcs0zLwlInOO0MJhE8ovfzDm3PdKYY/CKn2XoLK5ZqSWL9G3b9ZZWU80nFUjesXDMfVyhFV6Hk+RDpm+7/YQsOv7v9Yt7RX+fd8VgGf3900tN1eTNl2lLg4epFWTG5Uqna9+3qu+UTN3yb6qkfmszFa+yKAupbtUTsqhrFpjlQj1FtydXqVh0qotc7csXJbcsOr4h1fvHi129+CTZx2rzgwv/rZK4syZhzvMLFwhIHOFCh0P3+9weOZMuN8W79M9MxfT+lBYUJOS9vnSn5b6WMq3odTSUlWzl2xaso9d6nAp8gPgr1FjwU/NVv3/Cb/hf/XaoW1CS/9xXA3A4665ioVmv/7010lr9PdO96zSOmuZtVY5lzKUmoYwbyAyKftthyCCp3NoonsngqCIZsEigDhQKFIlWpEBNi5ZwIMiPxhyUWi+SyStUYgOBHLSjxEEmkUAixBWgMLDNolW7AGbGA4JHltzA2Dwcm9Fl6ySx7iVGJWgBf2HaGhyTlu5yD/c0C+D4phAuxfyHGmCuqhywStOyP3HzB/fiDhwTCN0A1vjMBBkpoRGCiZBcluWru5IhaFxdaESoxK0oP8QDU3O98iFgZgXbuiXQXGZJscLNdcceydCXVT1kiua2vKuse788Y2IA8c0QtOt6sDB9hHk+tyERgqKlNyWVM/1RcXuNeNrqOFlKmDtqcUSJVps1HA17d8xKzqGhVJU02oFAA==")
+      format("woff2"),
+    url("//at.alicdn.com/t/font_2403041_ekvcr9y0yb6.woff?t=1614940727369")
+      format("woff"),
+    url("//at.alicdn.com/t/font_2403041_ekvcr9y0yb6.ttf?t=1614940727369")
+      format("truetype"),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url("//at.alicdn.com/t/font_2403041_ekvcr9y0yb6.svg?t=1614940727369#tyh")
+      format("svg"); /* iOS 4.1- */
+}
+
+.tyh {
+  font-family: "tyh" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tyh-zan:before {
+  content: "\e6e3";
+}
+
+.tyh-qipao:before {
+  content: "\e728";
+}
+
+.tyh-huojian:before {
+  content: "\e605";
+}

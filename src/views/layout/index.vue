@@ -76,13 +76,11 @@ import { mapState } from 'vuex' // 映射 vuex
 export default {
   name: 'layoutIndex',
   computed: {
-    // 获取到 vuex 中主题状态
-    // ...mapState(['theme']), // 开关状态
     ...mapState(['userInfo']) // 用户信息
   },
   data () {
     return {
-      theme: this.$store.state.theme
+      theme: this.$store.state.theme // 主题状态
     }
   },
   methods: {
@@ -99,8 +97,14 @@ export default {
       }).then(() => {
         // 退出后删除本地存储
         window.localStorage.removeItem('userInfo')
-        // 退出后刷新页面
-        this.$router.go(0)
+        this.$store.commit('changeUserInfo', null)
+        this.$message({
+          message: '退出登录成功',
+          type: 'success',
+          duration: 900,
+          showClose: true
+        })
+        this.$router.push('/')
       })
     }
   }
@@ -108,6 +112,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#layoutIndex {
+  padding-top: 70px;
+}
 .navigationBar {
   width: 100%;
   height: 70px;
@@ -117,6 +124,11 @@ export default {
   align-items: center;
   justify-content: space-between;
   color: #dfdfdf;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 99;
   // 我的的名字
   .myName {
     cursor: pointer;
