@@ -1,3 +1,19 @@
-### 我自己的个人网站
+### 在线网站
 
-http://tianyuhao.icu/
+http://tianyuhao.icu
+
+
+## 安装依赖
+```
+npm install
+```
+
+### 启动项目
+```
+npm run serve
+```
+
+### 打包
+```
+npm run build
+```
