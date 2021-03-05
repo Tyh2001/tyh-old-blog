@@ -46,31 +46,40 @@ router.beforeEach((to, from, next) => {
   const user = window.localStorage.getItem('userInfo')
   // 如果访问首页 直接通过
   if (to.path === '/') {
-    next()
-    return
+    return next()
   }
+
+  // if (to.path === '/blog' && user && JSON.parse(user).keyId === 'tyh') {
+  //   return next()
+  // } else {
+  //   next('/')
+  //   Message({
+  //     message: '权限不足或未登录，无法访问！',
+  //     duration: 1000,
+  //     showClose: true
+  //   })
+  // }
+
   // 访问非首页 检测登录的状态
   if (to.path !== '/login') {
     if (user) {
-      next()
+      // next()
       // 如果访问我的动态页面 根据用户的权限进行判断 只有 tyh 可以访问
       // 其他用户直接返回首页 并提示
       if (to.path === '/blog') {
         if (JSON.parse(user).keyId === 'tyh') {
-          next()
+          return next()
         } else {
           Message({
             message: '权限不足，无法访问！',
-            duration: 1000,
+            duration: 800,
             showClose: true
           })
-          next('/')
+          return next('/')
         }
       }
-      return
     }
-    next('/login')
-    return
+    return next('/login')
   }
   next()
 })

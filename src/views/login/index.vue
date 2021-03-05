@@ -76,12 +76,13 @@ export default {
     }
   },
   mounted () {
+    // 页面加载完成之后显示弹框
     this.$notify.info({
       title: '登录账号',
       message: (`
         游客登录测试账号：
         <br />
-        账号：ceshi1234
+        账号：15211111111
         <br />
         密码：12345678
       `),
@@ -95,38 +96,28 @@ export default {
     async subonLogin () {
       this.loading = true
       const { data } = await onLogin()
-      const name = this.user.userName
-      const pass = this.user.userPassword
 
-      if (data.user1.userName === name && data.user1.userPassword === pass) {
-        const userInfo1 = data.user1
-        this.$message({
-          message: '游客登录成功',
-          type: 'success'
-        })
+      const name = this.user.userName // 获取到输入的用户名
+      const pass = this.user.userPassword // 获取到输入的密码
 
-        // 登录成功后保留用户信息
-        this.$store.commit('changeUserInfo', userInfo1)
-        this.$router.push('/')
-      } else if (data.user2.userName === name && data.user2.userPassword === pass) {
-        const userInfo2 = data.user2
-        this.$message({
-          message: 'Hi,Tyh!',
-          type: 'success',
-          duration: 1000,
-          showClose: true
-        })
-
-        // 登录成功后保留用户信息
-        this.$store.commit('changeUserInfo', userInfo2)
-        this.$router.push('/')
-      } else {
-        this.$message.error({
-          message: '登录失败，账号或密码错误',
-          duration: 1000
-        })
+      for (const key in data) {
+        if (data[key].userInfo.userName === name && data[key].userPassword === pass) {
+          const userInfo = data[key].userInfo // 获取用户的登录信息
+          this.$store.commit('changeUserInfo', userInfo) // 登录成功后保留用户信息
+          this.$message({
+            message: '登录成功！',
+            type: 'success',
+            duration: 1000,
+            showClose: true
+          })
+          this.$router.push('/')
+          return
+        }
       }
-
+      this.$message.error({
+        message: '登录失败，账号或密码错误',
+        duration: 1000
+      })
       this.loading = false
     },
     // 注册
