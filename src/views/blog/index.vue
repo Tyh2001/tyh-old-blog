@@ -22,7 +22,6 @@ export default {
 #blogIndex {
   width: 100%;
   min-height: 500px;
-  padding-top: 20px;
   background-color: #fff;
 }
 </style>

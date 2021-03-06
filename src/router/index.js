@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { Message } from 'element-ui'
+import store from '@/store/'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,13 @@ const routes = [
         component: () => import('@/views/blog'),
         meta: { requiresAuth: true }
       },
+      // 测试页面
+      {
+        path: '/ceshi',
+        name: 'ceshi',
+        component: () => import('@/views/ceshi'),
+        meta: { requiresAuth: true }
+      },
       // 404
       {
         path: '*',
@@ -41,28 +49,34 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // mode: 'history',
   routes
 })
 
 router.beforeEach((to, from, next) => {
-  const user = window.localStorage.getItem('userInfo')
-
+  const user = store.state.userInfo
   if (to.meta.requiresAuth) {
+    // 如果用户信息存在
     if (user) {
-      if (JSON.parse(user).keyId === 'tyh') {
-        return next()
+      // 如果方位的路径是 /blog 要校验身份权限
+      if (to.path === '/blog') {
+        if (user.keyId === 'tyh') {
+          return next()
+        }
+        Message({
+          message: '权限不足，无法访问！',
+          duration: 800,
+          showClose: true
+        })
+        return
       }
-      Message({
-        message: '权限不足，无法访问！',
-        duration: 800,
-        showClose: true
-      })
-      return next('/')
-    } else {
-      return next('/login')
+      return next()
     }
+    // 没有登录 提示是否需要登录
+    next('/login')
   } else {
-    return next()
+    // 不需要登录状态的页面 直接放行
+    next()
   }
 })
 
