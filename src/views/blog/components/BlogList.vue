@@ -1,11 +1,4 @@
 <template>
-  <!-- <div
-    id="BlogList"
-    :style="theme
-      ? 'background: #0d1117;color: #c9d1d9;'
-      : 'background: #eceff1;color: #32373c;'
-    "
-  > -->
   <div id="BlogList">
     <div
       v-for="(list, index) in blogList"
@@ -66,7 +59,10 @@ export default {
 
 <style lang="less" scoped>
 #BlogList {
-  padding: 20px;
+  // padding: 20px;
+  width: 920px;
+  margin: auto;
+  background: #fff;
 }
 // 图片盒子
 .imageBox {

@@ -1,5 +1,6 @@
 <template>
   <div id="blogIndex">
+    <Header />
     <BlogList />
     <!-- 返回顶部 -->
     <el-backtop>
@@ -10,10 +11,12 @@
 
 <script>
 import BlogList from './components/BlogList' // 博客列表组件
+import Header from './components/Header' // 博客列表组件
 export default {
   name: 'blogIndex',
   components: {
-    BlogList
+    BlogList,
+    Header
   }
 }
 </script>
@@ -22,6 +25,6 @@ export default {
 #blogIndex {
   width: 100%;
   min-height: 500px;
-  background-color: #fff;
+  padding-top: 10px;
 }
 </style>

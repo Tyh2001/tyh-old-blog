@@ -38,6 +38,20 @@ const routes = [
         component: () => import('@/views/ceshi'),
         meta: { requiresAuth: true }
       },
+      // 广场
+      {
+        path: '/square',
+        name: 'square',
+        component: () => import('@/views/square'),
+        meta: { requiresAuth: true }
+      },
+      // 设置
+      {
+        path: '/setting',
+        name: 'setting',
+        component: () => import('@/views/setting'),
+        meta: { requiresAuth: true }
+      },
       // 404
       {
         path: '*',
@@ -52,6 +66,12 @@ const router = new VueRouter({
   // mode: 'history',
   routes
 })
+
+// 解决 冗余导航报错问题
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 router.beforeEach((to, from, next) => {
   const user = store.state.userInfo

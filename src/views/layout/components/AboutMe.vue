@@ -20,8 +20,6 @@
           <i class="el-icon-caret-bottom" />
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>空</el-dropdown-item>
-          <el-dropdown-item>空</el-dropdown-item>
           <!-- 主题颜色 -->
           <el-dropdown-item>
             主题
@@ -33,6 +31,12 @@
               divided
               @change="swithcChange"
             />
+          </el-dropdown-item>
+          <!-- 设置 -->
+          <el-dropdown-item
+            @click.native="$router.push('/setting')"
+          >
+            设置
           </el-dropdown-item>
           <!-- 退出登录 -->
           <el-dropdown-item
@@ -121,6 +125,8 @@ export default {
     .username {
       color: #dfdfdf;
       font-size: 12px;
+      display: inline-block;
+      min-width: 45px;
     }
   }
   .pleaseOnLogin {

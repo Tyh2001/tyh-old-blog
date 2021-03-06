@@ -15,7 +15,7 @@
         <el-menu-item index="/">首页</el-menu-item>
         <el-menu-item index="/blog">我的动态</el-menu-item>
         <el-menu-item index="/ceshi">测试测试1</el-menu-item>
-        <el-menu-item index="1">测试测试2</el-menu-item>
+        <el-menu-item index="/square">广场</el-menu-item>
       </div>
 
       <AboutMe />

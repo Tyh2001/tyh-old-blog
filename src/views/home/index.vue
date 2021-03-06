@@ -2,10 +2,7 @@
   <div>
     <!-- 主页说明 -->
     <div class="bigExplain" :style="homePageImg">
-
-      <div
-        class="explain"
-      >
+      <div class="explain">
         <div class="PhotoBox">
           <img
             class="myPhoto"
