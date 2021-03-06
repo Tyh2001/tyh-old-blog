@@ -8,9 +8,12 @@
     <img src="http://r.photo.store.qq.com/psc?/V52ZsGYR2rB2dN0Ljym24DcBjp0pKw0B/45NBuzDIW489QBoVep5mceTySHJwdTLgBOpqYACW0fwJLlXQ4KavpQwEU6kfQhOJjxyWJFzcqktOY*CcTocjzJJr8wOxEo8Wd7KiqZoKxAI!/r" alt="">
   </div>
 </template>
-
 <script>
-export default {}
+export default {
+  data () {
+    return {}
+  }
+}
 </script>
 
 <style lang="less" scoped>

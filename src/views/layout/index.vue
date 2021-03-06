@@ -1,6 +1,7 @@
 <template>
   <div id="layoutIndex">
     <el-menu
+      :default-active="$route.path"
       class="el-menu-demo"
       mode="horizontal"
       background-color="#23282d"
@@ -51,6 +52,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "微软雅黑";
   // logo
   .myLogo {
     font-size: 30px;

@@ -428,6 +428,7 @@ export default {
   position: absolute;
   left: -205px;
   top: -90px;
+  z-index: 500;
 }
 
 .secondBox,
@@ -449,7 +450,7 @@ export default {
 .hour,
 .Number,
 .month {
-  color: rgba(255, 255, 255, 0.5);
+  color: #faf9f9;
   height: 20px;
   font-size: 15px;
   position: absolute;
@@ -472,7 +473,7 @@ export default {
   right: 0px;
   bottom: 0px;
   margin: auto;
-  color: rgba(255, 255, 255, 0.5);
+  color: #faf9f9;
 }
 
 /* 秒 */
@@ -618,6 +619,6 @@ span {
   float: right;
   width: 420px;
   height: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 </style>

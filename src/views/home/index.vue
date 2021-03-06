@@ -1,22 +1,24 @@
 <template>
   <div>
     <!-- 主页说明 -->
-    <div
-      class="explain"
-      :style="homePageImg"
-    >
-      <div class="PhotoBox">
-        <img
-          class="myPhoto"
-          src="https://wx1.sinaimg.cn/large/007LmPOmly1go95lrt7nrj30m30m3n5c.jpg"
-        >
-        <div class="title">
-          <h1>Hi,前端伙伴！</h1>
-          <div>—— 这是一个还凑合的个人网站 ——</div>
-          <h3>俱往矣i</h3>
+    <div class="bigExplain" :style="homePageImg">
+
+      <div
+        class="explain"
+      >
+        <div class="PhotoBox">
+          <img
+            class="myPhoto"
+            src="https://wx1.sinaimg.cn/large/007LmPOmly1go95lrt7nrj30m30m3n5c.jpg"
+          >
+          <div class="title">
+            <h1>Hi,前端伙伴！</h1>
+            <div>—— 这是一个还凑合的个人网站 ——</div>
+            <h3>俱往矣i</h3>
+          </div>
         </div>
+        <Time />
       </div>
-      <Time />
     </div>
 
     <!-- 中间部分 -->
@@ -109,7 +111,7 @@ export default {
     // 点击向下滚动效果
     toBottom () {
       window.scrollTo({
-        top: 1500,
+        top: 1400,
         behavior: 'smooth'
       })
     },
@@ -124,9 +126,12 @@ export default {
 
 <style lang="less" scoped>
 // 主页说明
-.explain {
-  width: 100%;
-  height: 450px;
+.bigExplain {
+  z-index: 300;
+  animation-name: image;
+  animation-duration: 10s;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
   position: relative;
   overflow: hidden;
   background-repeat: no-repeat;
@@ -134,35 +139,52 @@ export default {
   background-position: center;
   background-attachment: fixed;
   user-select: none;
-  // 头像
-  .PhotoBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 10%;
-    top: 80px;
-    z-index: 20;
-    .myPhoto {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 5px solid rgba(216, 216, 216, 0.4);
+  .explain {
+    background-image: url('./images/小黑点.png');
+    width: 100%;
+    height: 450px;
+    z-index: 200;
+    // 头像
+    .PhotoBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 10%;
+      top: 80px;
+      z-index: 20;
+      .myPhoto {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid rgba(216, 216, 216, 0.5);
+      }
+      .title {
+        margin-left: 30px;
+        z-index: 500;
+        h1 {
+          font-size: 60px;
+          font-weight: 800;
+          color: #fff;
+        }
+        div {
+           color: #fff;
+        }
+        h3 {
+          padding-top: 20px;
+           color: #fff;
+        }
+      }
     }
-    .title {
-      margin-left: 30px;
-      h1 {
-        font-size: 60px;
-        color: #f0efef;
-      }
-      div {
-        color: #fff;
-      }
-      h3 {
-        color: #fff;
-        padding-top: 20px;
-      }
-    }
+  }
+}
+@keyframes image {
+  0% {
+    background-size: auto 200%;
+  }
+
+  100% {
+    background-size: auto 170%;
   }
 }
 // 中间部分

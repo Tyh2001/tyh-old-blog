@@ -201,4 +201,7 @@ export default {
     margin:0 6px 0 6px;
   }
 }
+.el-backtop {
+  z-index: 9999999;
+}
 </style>
