@@ -20,7 +20,6 @@
           :src="img"
           fit="cover"
           :preview-src-list="list.images"
-          lazy
         />
       </div>
       <el-button
