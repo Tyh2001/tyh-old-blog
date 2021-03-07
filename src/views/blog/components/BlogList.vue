@@ -1,26 +1,48 @@
 <template>
-  <div id="BlogList">
+  <div
+    id="BlogList"
+  >
     <div
+      class="contentList"
       v-for="(list, index) in blogList"
       :key="index"
+      :style="
+        theme
+          ? 'background: #0d1117; color: #c9d1d9;'
+          : 'background: #faf8ff;color: #32373c;'
+      "
     >
-      <p>{{ list.content }}</p>
-      <div class="imageBox">
-        <el-image
-          class="blogImg"
-          v-for="(img, index) in list.images"
-          :key="index"
-          :src="img"
-          fit="cover"
-          :preview-src-list="list.images"
-        />
+      <ListHeader
+        :index="index"
+        :blogList="blogList"
+      />
+
+      <!-- 发布内容 -->
+      <p class="content">{{ list.content }}</p>
+      <el-image
+        lazy
+        class="blogImg"
+        v-for="(img, index) in list.images"
+        :key="index"
+        :src="img"
+        fit="cover"
+        :preview-src-list="list.images"
+        :style="imgWidth(list.images.length)"
+      />
+
+      <!-- 点赞评论框 -->
+      <div class="option">
+        <div class="zan">
+           <i class="tyh tyh-zan" />
+           <span>25</span>
+        </div>
+        <div class="qipao">
+          <i class="tyh tyh-qipao" />
+          <span>41</span>
+        </div>
       </div>
-      <el-button
-        type="danger"
-        @click="deleteList(index)"
-      >
-        删除
-      </el-button>
+
+      <el-divider content-position="left">暂无评论内容</el-divider>
     </div>
   </div>
 </template>
@@ -29,16 +51,20 @@
 // 获取博客列表数控
 import { getBlogList } from '@/api/list'
 import { mapState } from 'vuex' // 映射 vuex
+import ListHeader from './ListHeader'
 export default {
   name: 'BlogList',
-  data () {
-    return {
-      blogList: []
-    }
+  components: {
+    ListHeader
   },
   computed: {
     // 获取到 vuex 中主题状态
     ...mapState(['theme'])
+  },
+  data () {
+    return {
+      blogList: [] // 博客列表
+    }
   },
   created () {
     this.loadgetBlogList() // 获取博客列表
@@ -49,9 +75,15 @@ export default {
       const { data } = await getBlogList()
       this.blogList = data.blog.list
     },
-    // 删除
-    deleteList (index) {
-      this.blogList.splice(index, 1)
+    // 图片宽度
+    imgWidth (length) {
+      if (length === 1) {
+        return 'width: 100%'
+      } else if (length === 2) {
+        return 'width: 49%'
+      } else if (length > 2) {
+        return 'width: 32%; height: 140px;'
+      }
     }
   }
 }
@@ -59,19 +91,62 @@ export default {
 
 <style lang="less" scoped>
 #BlogList {
-  // padding: 20px;
-  width: 920px;
+  width: 600px;
   margin: auto;
-  background: #fff;
+  box-sizing: border-box;
+}
+.contentList {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  .content {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
 }
 // 图片盒子
-.imageBox {
-  width: 612px;
-  .blogImg {
-    width: 200px;
-    height: 140px;
-    border-radius: 3px;
-    margin: 2px;
+.blogImg {
+  margin: 2px;
+  border-radius: 3px;
+}
+// 点赞框
+.option {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 15px;
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #857a99;
+    cursor: pointer;
+    i {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 17px;
+    }
+    i:hover {
+      color: #ff890f;
+      background: #fff2e5;
+      border-radius: 50%;
+    }
+    span {
+      font-size: 13px;
+    }
   }
+  .zan {
+    margin-right: 15px;
+  }
+  .qipao {
+    margin-right: 30px;
+  }
+}
+// 分割线
+.el-divider__text {
+  background: #faf8ff;
+  color: #32373c;
 }
 </style>

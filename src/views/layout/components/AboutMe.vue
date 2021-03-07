@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import { Message } from 'at-ui'
 import { mapState } from 'vuex' // 映射 vuex
 export default {
   name: 'AboutMe',
@@ -86,14 +87,12 @@ export default {
         // 退出后删除本地存储
         window.localStorage.removeItem('userInfo')
         this.$store.commit('changeUserInfo', null)
-        this.$message({
-          message: '退出登录成功',
-          type: 'success',
-          duration: 900,
-          showClose: true
+        Message.success({
+          message: '退出登录成功！',
+          duration: 900
         })
         this.$router.push('/')
-      })
+      }).catch(() => {})
     }
   }
 }

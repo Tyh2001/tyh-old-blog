@@ -63,6 +63,7 @@
 </template>
 
 <script>
+import { Message } from 'at-ui'
 import { onLogin } from '@/api/user'
 export default {
   name: 'loginIndex',
@@ -104,25 +105,26 @@ export default {
         if (data[key].userName === name && data[key].userPassword === pass) {
           const userInfo = data[key].userInfo // 获取用户的登录信息
           this.$store.commit('changeUserInfo', userInfo) // 登录成功后保留用户信息
-          this.$message({
+          Message.success({
             message: '登录成功！',
-            type: 'success',
-            duration: 1000,
-            showClose: true
+            duration: 900
           })
           this.$router.push('/')
           return
         }
       }
-      this.$message.error({
-        message: '登录失败，账号或密码错误',
+      Message.warning({
+        message: '账号或密码错误！',
         duration: 1000
       })
       this.loading = false
     },
     // 注册
     onRegister () {
-      this.$message('注册功能暂时不能使用！')
+      Message.error({
+        message: '注册功能暂时不能使用！',
+        duration: 1000
+      })
     }
   }
 }

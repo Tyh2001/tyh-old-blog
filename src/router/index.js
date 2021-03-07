@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { Message } from 'element-ui'
+import { Message } from 'at-ui'
 import store from '@/store/'
 
 Vue.use(VueRouter)
@@ -85,7 +85,7 @@ router.beforeEach((to, from, next) => {
         }
         Message({
           message: '权限不足，无法访问！',
-          duration: 800,
+          duration: 900,
           showClose: true
         })
         return
