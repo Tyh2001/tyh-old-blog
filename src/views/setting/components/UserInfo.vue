@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-form :model="userInfo" label-width="80px" size="small">
+  <div id="UserInfo">
+    <el-form :model="userInfo" size="small">
       <!-- 昵称 -->
       <el-form-item label="昵称">
         <el-input v-model="userInfo.name"></el-input>
@@ -39,11 +39,6 @@
         </el-select>
       </el-form-item>
 
-      <!-- 个性签名 -->
-      <el-form-item label="个性签名">
-        <el-input type="textarea" v-model="userInfo.autograph"></el-input>
-      </el-form-item>
-
       <!-- 邮箱 -->
       <el-form-item label="邮箱">
         <el-input v-model="userInfo.mail"></el-input>
@@ -54,8 +49,13 @@
         <el-input v-model="userInfo.QQ"></el-input>
       </el-form-item>
 
+      <!-- 个性签名 -->
+      <el-form-item label="个性签名">
+        <el-input type="textarea" v-model="userInfo.autograph"></el-input>
+      </el-form-item>
+
       <el-form-item>
-        <el-button type="primary">保存</el-button>
+        <el-button type="primary">保存更新</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -83,5 +83,10 @@ export default {
 <style lang="less" scoped>
 .el-select {
   width: 100%;
+}
+.el-button {
+  width: 100%;
+  border: none;
+  background: #2ea44f;
 }
 </style>
