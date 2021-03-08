@@ -1,6 +1,9 @@
 <template>
   <div id="ceshi">
     <mavon-editor v-model="value"/>
+    <el-backtop>
+      <i class="tyh tyh-huojian" />
+    </el-backtop>
   </div>
 </template>
 <script>
@@ -30,7 +33,7 @@ export default {
 
 <style lang="less" scoped>
 #ceshi {
-  // background: #fff;
+  margin-top: 10px;
 }
 img {
   height: 200px;

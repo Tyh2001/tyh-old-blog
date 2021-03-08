@@ -461,6 +461,7 @@ export default {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  z-index: 10;
 }
 
 /* 年份 */
@@ -620,5 +621,6 @@ span {
   width: 420px;
   height: 20px;
   background-color: rgba(255, 255, 255, 0.3);
+  z-index: 9;
 }
 </style>

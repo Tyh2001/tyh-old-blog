@@ -5,7 +5,6 @@
 
       <!-- 下拉菜单 -->
       <el-dropdown
-        trigger="click"
         v-if="userInfo !== null"
         :hide-on-click="false"
       >

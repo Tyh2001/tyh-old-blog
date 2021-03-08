@@ -78,11 +78,11 @@ export default {
     // 图片宽度
     imgWidth (length) {
       if (length === 1) {
-        return 'width: 100%'
+        return 'width: 100%; max-height: 500px'
       } else if (length === 2) {
-        return 'width: 49%'
+        return 'width: 281px; max-height: 190px'
       } else if (length > 2) {
-        return 'width: 32%; height: 140px;'
+        return 'width: 186px; max-height: 140px;'
       }
     }
   }

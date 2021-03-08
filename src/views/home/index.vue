@@ -10,8 +10,8 @@
           >
           <div class="title">
             <h1>Hi,前端伙伴！</h1>
-            <div>—— 这是一个还凑合的个人网站 ——</div>
-            <h3>俱往矣i</h3>
+            <div>—— 这是个还凑合的个人网站 ——</div>
+            <h2>俱往矣i</h2>
           </div>
         </div>
         <Time />
@@ -153,7 +153,7 @@ export default {
       position: absolute;
       right: 10%;
       top: 80px;
-      z-index: 20;
+      z-index: 550;
       .myPhoto {
         width: 150px;
         height: 150px;
@@ -162,18 +162,18 @@ export default {
       }
       .title {
         margin-left: 30px;
-        z-index: 500;
+        z-index: 550;
+        color: #fff;
         h1 {
           font-size: 60px;
-          font-weight: 800;
           color: #fff;
+          font-weight: 800;
         }
         div {
-           color: #fff;
+           font-size: 19px;
         }
-        h3 {
-          padding-top: 20px;
-           color: #fff;
+        h2 {
+          color: #fff;
         }
       }
     }
