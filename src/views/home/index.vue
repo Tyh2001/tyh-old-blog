@@ -43,11 +43,15 @@
           <fieldset>
             <legend
               :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
-            >{{ say.title }}</legend>
+            >
+              {{ say.title }}
+            </legend>
           </fieldset>
           <p
             :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
-          >{{ say.content }}</p>
+          >
+            {{ say.content }}
+          </p>
         </div>
       </div>
 
@@ -224,7 +228,7 @@ export default {
         color: #261600;
         font-size: 14px;
         width: 270px;
-        margin: 25px auto;
+        margin: 10px auto;
       }
     }
   }

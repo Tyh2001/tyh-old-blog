@@ -1,9 +1,11 @@
 <template>
-  <div id="HeaderInfo">
-    <img class="photo" :src="userInfo.userPhoto">
-    <div class="nameBox">
-      <h2>{{ userInfo.name }}</h2>
-      <p>您的个人账户信息</p>
+  <div>
+    <div id="HeaderInfo">
+      <img class="photo" :src="userInfo.userPhoto">
+      <div class="nameBox">
+        <h2>{{ userInfo.name }}</h2>
+        <p>您的基本账户信息</p>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +29,7 @@ export default {
   .photo {
     width: 45px;
     height: 45px;
+    border-radius: 50%;
   }
   .nameBox {
     margin-left: 10px;

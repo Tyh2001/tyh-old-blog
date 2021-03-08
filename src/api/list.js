@@ -1,5 +1,5 @@
 /**
- * 文章相关
+ * 获取我的发布内容
  */
 
 import request from '@/utils/request'

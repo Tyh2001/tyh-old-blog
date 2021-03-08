@@ -102,7 +102,7 @@ export default {
       const pass = this.user.userPassword // 获取到输入的密码
 
       for (const key in data) {
-        if (data[key].userName === name && data[key].userPassword === pass) {
+        if (data[key].userInfo.userName === name && data[key].userPassword === pass) {
           const userInfo = data[key].userInfo // 获取用户的登录信息
           this.$store.commit('changeUserInfo', userInfo) // 登录成功后保留用户信息
           Message.success({

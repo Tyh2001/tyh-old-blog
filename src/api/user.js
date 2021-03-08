@@ -11,3 +11,11 @@ export const onLogin = () => {
     url: '/tyh/onlogin2'
   })
 }
+
+// 获取个人信息
+export const getSettingSelect = () => {
+  return request({
+    method: 'GET',
+    url: '/tyh/setting/select'
+  })
+}
