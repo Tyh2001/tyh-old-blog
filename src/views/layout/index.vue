@@ -14,7 +14,7 @@
       <div class="option">
         <el-menu-item index="/">首页</el-menu-item>
         <el-menu-item index="/blog">我的动态</el-menu-item>
-        <el-menu-item index="/ceshi">测试测试1</el-menu-item>
+        <el-menu-item index="/ceshi">模拟文档</el-menu-item>
         <el-menu-item index="/square">广场</el-menu-item>
       </div>
 

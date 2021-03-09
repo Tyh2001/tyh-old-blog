@@ -1,6 +1,6 @@
 <template>
   <div id="squareIndex">
-    广场页面
+    <h1>广场页面 -- 后续开发。。。。</h1>
   </div>
 </template>
 

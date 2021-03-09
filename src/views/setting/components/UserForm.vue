@@ -1,5 +1,14 @@
 <template>
-  <div id="UserForm">
+  <div
+    id="UserForm"
+    :style="
+      theme
+        ? 'background: #0d1117;'
+        : 'background: #faf8ff;'
+    "
+  >
+    <HeaderInfo />
+
     <!-- 基本设置 -->
     <el-divider content-position="left">基本设置</el-divider>
     <div class="userForm">
@@ -175,10 +184,16 @@ import { Message } from 'at-ui'
 // 头像裁切器
 import 'cropperjs/dist/cropper.css'
 import Cropper from 'cropperjs'
-import { getSettingSelect, onLogin } from '@/api/user' // 获取下拉列表内容
-import { mapState } from 'vuex' // 映射 vuex
+// 获取下拉列表内容 - 获取用户信息
+import { getSettingSelect, onLogin } from '@/api/user'
+// 映射 vuex
+import { mapState } from 'vuex'
+import HeaderInfo from './HeaderInfo'
 export default {
   name: 'UserForm',
+  components: {
+    HeaderInfo
+  },
   data () {
     return {
       UserForm: {},
@@ -191,7 +206,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['userInfo'])
+    ...mapState(['userInfo', 'theme'])
   },
   created () {
     this.loadgetSettingSelect() // 获取下拉菜单内容
@@ -259,6 +274,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#UserForm {
+  width: 650px;
+  padding: 20px;
+  border-radius: 3px;
+}
 .el-select {
   width: 100%;
 }

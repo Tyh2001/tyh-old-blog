@@ -26,7 +26,6 @@ export default {
   width: 600px;
   height: 230px;
   user-select: none;
-  margin-top: 10px;
   background-image: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcVnPDTSzVYfrLDVDwOT1M4LOj0vWoxKHxsaU*Pp69LIDJDUaeXYmFFzV7rtBbPyqbUwjx8VCOP7Vuyqeqc7JpmI!/r);
   margin: 0 auto;
   background-size: cover;

@@ -7,22 +7,31 @@
   </div>
 </template>
 <script>
+// 获取笔记内容
 import { getVueDoc } from '@/api/list'
 import Vue from 'vue'
+// 引入富文本编辑器
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+// 映射 vuex
+import { mapState } from 'vuex'
 Vue.use(mavonEditor)
 export default {
   name: 'ceshiIndex',
+  computed: {
+    // 获取到 vuex 中主题状态
+    ...mapState(['theme'])
+  },
   data () {
     return {
       value: ''
     }
   },
   created () {
-    this.loadgetVueDoc()
+    this.loadgetVueDoc() // 获取文章数据
   },
   methods: {
+    // 获取文章数据
     async loadgetVueDoc () {
       const { data } = await getVueDoc()
       this.value = data.data.vue.document
@@ -33,7 +42,8 @@ export default {
 
 <style lang="less" scoped>
 #ceshi {
-  margin-top: 10px;
+  margin-top: 15px;
+  padding-bottom: 50px;
 }
 img {
   height: 200px;

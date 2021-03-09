@@ -52,6 +52,13 @@ const routes = [
         component: () => import('@/views/setting'),
         meta: { requiresAuth: true }
       },
+      // 富文本编辑器编辑页面
+      {
+        path: '/input',
+        name: 'input',
+        component: () => import('@/views/input'),
+        meta: { requiresAuth: false }
+      },
       // 404
       {
         path: '*',

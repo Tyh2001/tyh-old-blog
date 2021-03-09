@@ -23,6 +23,6 @@ export default {
 
 <style lang="less" scoped>
 #blogIndex {
-  padding-top: 10px;
+  padding: 15px 0 50px;
 }
 </style>
