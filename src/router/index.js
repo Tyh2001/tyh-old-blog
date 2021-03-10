@@ -31,11 +31,11 @@ const routes = [
         component: () => import('@/views/blog'),
         meta: { requiresAuth: true }
       },
-      // 测试页面
+      // 技术文章
       {
-        path: '/ceshi',
-        name: 'ceshi',
-        component: () => import('@/views/ceshi'),
+        path: '/article',
+        name: 'article',
+        component: () => import('@/views/article'),
         meta: { requiresAuth: true }
       },
       // 广场

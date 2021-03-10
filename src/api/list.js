@@ -19,3 +19,11 @@ export const getVueDoc = () => {
     url: '/tyh/document/vue'
   })
 }
+
+// 获取其他技术文章
+export const getOtherDoc = () => {
+  return request({
+    method: 'GET',
+    url: '/tyh/document/other'
+  })
+}

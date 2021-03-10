@@ -1,16 +1,31 @@
 <template>
   <div id="squareIndex">
-    <h1>广场页面 -- 后续开发。。。。</h1>
+    <el-carousel height="150px">
+      <el-carousel-item v-for="item in 4" :key="item">
+        <h3 class="small">{{ item }}</h3>
+        <img height="150px" src="https://pic.netbian.com/uploads/allimg/201207/233833-1607355513cbea.jpg" alt="">
+      </el-carousel-item>
+    </el-carousel>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'squareIndex'
+  name: '',
+  components: {},
+  props: {},
+  data () {
+    return {}
+  },
+  computed: {},
+  watch: {},
+  created () {},
+  mounted () {},
+  methods: {}
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped lang="less">
 #squareIndex {
   background: #fff;
 }
