@@ -49,7 +49,7 @@
 
 <script>
 // 获取博客列表数控
-import { getBlogList } from '@/api/list'
+import { getBlogList } from '@/api/article'
 import { mapState } from 'vuex' // 映射 vuex
 import ListHeader from './ListHeader'
 export default {

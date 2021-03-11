@@ -42,7 +42,7 @@
 </template>
 <script>
 // 获取笔记内容
-import { getOtherDoc } from '@/api/list'
+import { getOtherDoc } from '@/api/article'
 import Vue from 'vue'
 // 引入富文本编辑器
 import mavonEditor from 'mavon-editor'

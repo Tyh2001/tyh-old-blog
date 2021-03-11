@@ -1,11 +1,6 @@
 <template>
   <div id="squareIndex">
-    <el-carousel height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
-        <h3 class="small">{{ item }}</h3>
-        <img height="150px" src="https://pic.netbian.com/uploads/allimg/201207/233833-1607355513cbea.jpg" alt="">
-      </el-carousel-item>
-    </el-carousel>
+    <h1>广场页面。。。后续更新。。。</h1>
   </div>
 </template>
 

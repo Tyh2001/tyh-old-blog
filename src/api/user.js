@@ -12,7 +12,7 @@ export const onLogin = () => {
   })
 }
 
-// 获取个人信息
+// 获取设置下拉列表内容
 export const getSettingSelect = () => {
   return request({
     method: 'GET',

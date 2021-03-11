@@ -1,5 +1,5 @@
 /**
- * 获取我的发布内容
+ * 文章相关
  */
 
 import request from '@/utils/request'
@@ -8,7 +8,7 @@ import request from '@/utils/request'
 export const getBlogList = () => {
   return request({
     method: 'GET',
-    url: '/tyh/bloglist1'
+    url: '/tyh/BlogList'
   })
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 主页说明 -->
-    <div class="bigExplain" :style="homePageImg">
+    <div class="bigExplain">
       <div class="explain">
         <div class="PhotoBox">
           <img
@@ -72,7 +72,6 @@
 
 <script>
 // 获取主页背景图
-import { getHomePage } from '@/api/homePage'
 import Time from './components/Time' // 时间罗盘
 import BottomList from './components/BottomList' // 底部图片文案
 import { mapState } from 'vuex' // 映射 vuex
@@ -101,8 +100,7 @@ export default {
           title: '星辰大海',
           content: '如果眼下还是一团零星之火，那运筹帷幄之后，迎面东风，就是一场烈焰燎原吧，那必定会是一番尽情的燃烧。'
         }
-      ],
-      homePageImg: '' // 主页背景图
+      ]
     }
   },
   created () {
@@ -115,11 +113,6 @@ export default {
         top: 1400,
         behavior: 'smooth'
       })
-    },
-    // 获取主页背景图
-    async loadgetHomePage () {
-      const { data } = await getHomePage()
-      this.homePageImg = data.url
     }
   }
 }
@@ -128,6 +121,7 @@ export default {
 <style lang="less" scoped>
 // 主页说明
 .bigExplain {
+  background-image: url(https://api.wod.xyz/Image/GetImage?type=1);
   z-index: 300;
   animation-name: image;
   animation-duration: 10s;
