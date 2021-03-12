@@ -8,7 +8,7 @@ import request from '@/utils/request'
 export const onLogin = () => {
   return request({
     method: 'POST',
-    url: '/tyh/onlogin2'
+    url: '/tyh/onLogin'
   })
 }
 
