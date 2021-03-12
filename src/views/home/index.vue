@@ -103,9 +103,6 @@ export default {
       ]
     }
   },
-  created () {
-    this.loadgetHomePage() // 获取主页背景图
-  },
   methods: {
     // 点击向下滚动效果
     toBottom () {
