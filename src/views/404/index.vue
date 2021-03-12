@@ -6,13 +6,13 @@
     <div class="back">
       <p
         class="returnHome"
-        @click="$router.push('/')"
+        @click="returnHome"
       >
         返回首页
       </p>
       <p
         class="return"
-        @click="$router.back(-1)"
+        @click="returnOut"
       >
         返回上一层
       </p>
@@ -29,16 +29,29 @@ export default {
   name: 'err',
   data () {
     return {
-      time: 5
+      time: 5,
+      Timmer: null
     }
   },
   mounted () {
-    setInterval(() => {
+    this.Timmer = setInterval(() => {
       this.time--
       if (this.time === 0) {
         this.$router.back(-1)
       }
     }, 1000)
+  },
+  methods: {
+    // 返回首页
+    returnHome () {
+      this.$router.push('/')
+      clearInterval(this.Timmer)
+    },
+    // 返回上一层
+    returnOut () {
+      this.$router.back(-1)
+      clearInterval(this.Timmer)
+    }
   }
 }
 </script>
@@ -69,8 +82,10 @@ export default {
   margin: 40px auto;
   display: flex;
   justify-content: space-around;
-  color: rgb(255,130,0);
-  .returnHome,
+  .returnHome {
+    color: rgb(255,130,0);
+    cursor: pointer;
+  }
   .return {
     cursor: pointer;
   }
