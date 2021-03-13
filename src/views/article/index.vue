@@ -4,8 +4,14 @@
       <!-- Vue相关 -->
       <el-tab-pane label="Vue相关">
         <el-collapse>
-          <el-collapse-item title="vue教程1" name="1">
-            暂无内容
+          <el-collapse-item
+            v-for="(vueDoc, index) in vueDocs"
+            :key="index"
+            :title="vueDoc.title"
+            :name="index + 1"
+          >
+            <p>更新时间：{{vueDoc.time }}</p>
+            <mavon-editor v-model="vueDoc.content"/>
           </el-collapse-item>
         </el-collapse>
       </el-tab-pane>
@@ -13,8 +19,14 @@
       <!-- JS 相关 -->
       <el-tab-pane label="JS相关">
         <el-collapse>
-          <el-collapse-item title="JS教程1" name="1">
-            暂无内容
+          <el-collapse-item
+            v-for="(jsDoc, index) in jsDocs"
+            :key="index"
+            :title="jsDoc.title"
+            :name="index + 1"
+          >
+            <p>更新时间：{{jsDoc.time }}</p>
+            <mavon-editor v-model="jsDoc.content"/>
           </el-collapse-item>
         </el-collapse>
       </el-tab-pane>
@@ -41,8 +53,8 @@
   </div>
 </template>
 <script>
-// 获取笔记内容
-import { getOtherDoc } from '@/api/article'
+// 获取技术文章内
+import { getVueDoc, getJsDoc, getOtherDoc } from '@/api/article'
 import Vue from 'vue'
 // 引入富文本编辑器
 import mavonEditor from 'mavon-editor'
@@ -58,13 +70,27 @@ export default {
   },
   data () {
     return {
+      vueDocs: {}, // 获取Vue技术文章
+      jsDocs: {}, // 获取Js技术文章
       otherDocs: {} // 获取其他技术文章
     }
   },
   created () {
+    this.loadgetVueDoc() // 获取Vue技术文章
+    this.loadgetgetJsDoc() // 获取Js技术文章
     this.loadgetOtherDoc() // 获取其他技术文章
   },
   methods: {
+    // 获取Vue技术文章
+    async loadgetVueDoc () {
+      const { data } = await getVueDoc()
+      this.vueDocs = data.data
+    },
+    // 获取Js技术文章
+    async loadgetgetJsDoc () {
+      const { data } = await getJsDoc()
+      this.jsDocs = data.data
+    },
     // 获取其他技术文章
     async loadgetOtherDoc () {
       const { data } = await getOtherDoc()

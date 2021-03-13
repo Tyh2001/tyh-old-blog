@@ -137,7 +137,7 @@
       </div>
     </div>
 
-    <el-divider content-position="left">私密设置</el-divider>
+    <el-divider content-position="left">更改密码</el-divider>
     <div class="userForm">
       <el-form class="info" size="small">
         <!-- 初始密码 -->
@@ -196,7 +196,7 @@ export default {
   },
   data () {
     return {
-      UserForm: {},
+      UserForm: {}, // 用户信息
       Genders: [], // 性别
       Stars: [], // 星座
       feelings: [], // 感情状态

@@ -20,6 +20,14 @@ export const getVueDoc = () => {
   })
 }
 
+// 获取JS技术文章
+export const getJsDoc = () => {
+  return request({
+    method: 'GET',
+    url: '/tyh/document/js'
+  })
+}
+
 // 获取其他技术文章
 export const getOtherDoc = () => {
   return request({
