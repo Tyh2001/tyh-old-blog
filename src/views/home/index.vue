@@ -249,16 +249,15 @@ export default {
     }
   }
 }
-@media screen and (max-width: 945px) {
+@media (max-width: 945px) {
   // 下面展示的三段话
   .middleBox {
-    height: 900px;
+    min-height: 950px;
     .say {
       width: 100%;
       display: block;
       .sayData {
         width: 550px;
-        height: 180px;
         margin: 20px auto;
         border: 1px solid #d2d2d2;
         fieldset {
@@ -285,6 +284,39 @@ export default {
   }
   .Bottom {
     top: 1930px;
+  }
+}
+@media (max-width: 560px) {
+  .middleBox {
+    min-height: 1000px;
+    .say {
+      width: 100%;
+      display: block;
+      .sayData {
+        width: 100%;
+        margin: 20px auto;
+        border: 1px solid #d2d2d2;
+        fieldset {
+          border-bottom: transparent;
+          border-left: transparent;
+          border-right: transparent;
+          border-top: 1px solid #d2d2d2;
+          margin-top: 30px;
+          legend {
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 21px;
+          }
+        }
+        p {
+          color: #261600;
+          font-size: 14px;
+          width: 80%;
+          margin: 25px auto;
+        }
+      }
+    }
   }
 }
 </style>

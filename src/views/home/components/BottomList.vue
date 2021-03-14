@@ -5,8 +5,8 @@
   >
     <!-- 第一段内容 -->
     <div class="content1">
-      <div class="listC1">“ 慢慢来吧 谁都有努力的过程 ”</div>
-      <div class="listE1">“ man man lai ba shei dou you nu li de guo cheng ”</div>
+      <h1 class="listC1">“ 慢慢来吧 谁都有努力的过程 ”</h1>
+      <p class="listE1">“ man man lai ba shei dou you nu li de guo cheng ”</p>
       <img
         class="image1"
         src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1Wn8LQ8L7IVMuua*LlMq7yHuu6mKZBpXmmaS1ETexiFkjx3dIJt7dMUgYPezer2UMg!/r"
@@ -14,48 +14,48 @@
     </div>
 
     <!-- 第二段内容 -->
-    <div class="content2">
-      <div class="text">
-        <div class="listC2">“ 我们在很久很久以前 就没有以后了 ”</div>
-        <div class="listE2">“ wo men zai hen jiu hen jiu yi qian jiu mei you yi hou le ”</div>
+    <div class="content">
+      <div class="words">
+        <h1 class="listC2">“ 我们在很久很久以前，就没有以后了 ”</h1>
+        <p class="listE2">“ wo men zai hen jiu hen jiu yi qian, jiu mei you yi hou le ”</p>
       </div>
-      <img
-        class="image2"
-        src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1UCYxNno0ntbLq9bxHtzwI9rCc.1BaitjaxqnbIC3gnXaOJBMDcAjmUyxATfBlTNPs!/r"
-      >
+      <div class="picture">
+        <img
+          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1UCYxNno0ntbLq9bxHtzwI9rCc.1BaitjaxqnbIC3gnXaOJBMDcAjmUyxATfBlTNPs!/r"
+        >
+      </div>
     </div>
 
     <!-- 第三段内容 -->
-    <div class="content3">
-      <img
-        class="image3"
-        src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1V2jp9MjMDCrmmRsE3MBuRdxDTthIySfocYA4zWVEvk5FmYrzz4ugotqg0.0OVFcfM!/r"
-      >
-      <div class="text">
-        <div class="listC3">“ 愿我最爱的人 也最爱我 ”</div>
-        <div class="listE3">“ yuan wo zui ai de ren ye zui ai wo ”</div>
+    <div class="content">
+      <div class="picture">
+        <img
+          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1V2jp9MjMDCrmmRsE3MBuRdxDTthIySfocYA4zWVEvk5FmYrzz4ugotqg0.0OVFcfM!/r"
+        >
+      </div>
+      <div class="words">
+        <h1 class="listC3">“ 愿我最爱的人，也最爱我 ”</h1>
+        <p class="listE3">“ yuan wo zui ai de ren, ye zui ai wo ”</p>
       </div>
     </div>
 
     <!-- 第四段内容 -->
-    <div class="content4">
-      <div class="text">
-        <p
+    <div class="content">
+      <div>
+        <h1
           class="listC4"
           :style=" theme ?'color: #c9d1d9;' : 'color: #32373c;'"
         >
           “ 最怕你一生碌碌无为，还安慰自己平凡可贵 ”
-        </p>
+        </h1>
         <p
           class="listE4"
           :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
         >
           “ zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui ”
         </p>
-      </div>
-      <div class="imgBox">
         <img
-          class="image4"
+          class="picture-4"
           src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1XYrM3BWXZluTuyuPHd5ArS2is91J4.xP5s60KfihPoutaY87db.B7o5qKYNwqeyfw!/r"
         >
       </div>
@@ -96,8 +96,6 @@ export default {
 #BottomList {
   width: 100%;
   margin-top: 550px;
-  background-color: #eceff1;
-  overflow-x: hidden;
   user-select: none;
 }
 // 第一段内容
@@ -117,72 +115,78 @@ export default {
     width: 100%;
   }
 }
-// 第二段内容
-.content2 {
-  margin-top: 120px;
-  width: 100%;
+// 第二三四段内容
+.content {
+  width: 1000px;
+  margin: auto;
   display: flex;
-  justify-content: space-around;
-  .text {
+  justify-content: center;
+  margin-top: 100px;
+  // 文字
+  .words {
+    width: 50%;
     .listC2 {
       font-size: 25px;
-      font-weight: 600;
-      color: #64cffa;
-      margin: 90px 20px 0 50px;
+      color: rgb(100, 207, 250);
+      margin-top: 150px;
     }
     .listE2 {
-      color: #64cffa;
-      margin: 43px 0px 30px 60px;
+      color: rgb(100, 207, 250);
+      margin: 15px 0 0 50px;
     }
-  }
-  .image2 {
-    width: 400px;
-  }
-}
-// 第三段内容
-.content3 {
-  margin-top: 120px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  .image3 {
-    width: 400px;
-  }
-  .text {
     .listC3 {
       font-size: 25px;
-      font-weight: 600;
-      color: orange;
-      margin: 90px 0 0 -90px;
+      color: rgb(255, 165, 0);
+      margin: 150px 0 0 40px;
     }
     .listE3 {
-      color: orange;
-      margin: 43px 0 0 0px;
+      color: rgb(255, 165, 0);
+      margin: 15px 0 0 50px;
     }
+  }
+  // 图片
+  .picture {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+  .listC4 {
+    font-size: 25px;
+    color: rgb(35, 40, 45);
+    text-align: center;
+  }
+  .listE4 {
+    color: rgb(35, 40, 45);
+    text-align: center;
+  }
+  .picture-4 {
+    width: 100%;
   }
 }
-// 第四段内容
-.content4 {
-  margin-top: 100px;
-  .text {
-    text-align: center;
-    .listC4 {
-      font-size: 25px;
-      font-weight: 600;
-      color: #23282d;
-      margin: 90px 20px 0 50px;
-    }
-    .listE4 {
-      color: #23282d;
-      margin: 43px 0px 30px 60px;
-    }
+@media (max-width: 1100px) {
+  .content {
+    max-width: 900px;
   }
-  .imgBox {
-    width: 800px;
-    margin: auto;
-    .image4 {
-      width: 800px;
-    }
+}
+@media (max-width: 910px) {
+  .content {
+    max-width: 800px;
+  }
+}
+@media (max-width: 810px) {
+  .content {
+    max-width: 700px;
+  }
+}
+@media (max-width: 710px) {
+  .content {
+    max-width: 600px;
+  }
+}
+@media (max-width: 610px) {
+  .content {
+    max-width: 500px;
   }
 }
 // 页脚
@@ -191,7 +195,6 @@ export default {
   margin-top: 60px;
   border-top: 1px solid #dfdfdf;
   height: 230px;
-  // background: #f7f7f7;
   color: #0073bb;
   display: flex;
   justify-content: center;
