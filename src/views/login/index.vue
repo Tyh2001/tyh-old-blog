@@ -1,72 +1,87 @@
 <template>
   <div id="loginIndex">
-    <div class="photo">
-      <img
-        src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH.WlbL0Nrtw5DOpFddNOqa0!/r"
-        @click="$router.push('/')"
-      >
-    </div>
+    <kinesis-container>
+      <kinesis-element :strength="4" type="depth">
+        <div id="loginBox">
+          <!-- 头像 -->
+          <div class="photo">
+            <img
+              src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH.WlbL0Nrtw5DOpFddNOqa0!/r"
+              @click="$router.push('/')"
+            >
+          </div>
 
-    <p class="Welcome">Welcome to my website.</p>
+          <p class="Welcome">Welcome to my website.</p>
 
-    <!-- 登录框 -->
-    <div class="loginBox">
-      <!-- 账号 -->
-      <p class="title">用户名或账号</p>
-      <el-input
-        v-model="user.userName"
-        size="small"
-        clearable
-        placeholder="请输入用户名"
-      />
+          <!-- 登录框 -->
+          <div class="loginBox">
+            <!-- 账号 -->
+            <p class="title">用户名或账号</p>
+            <el-input
+              v-model="user.userName"
+              size="small"
+              clearable
+              placeholder="请输入用户名"
+            />
 
-      <!-- 密码 -->
-      <p class="title">密码</p>
-      <el-input
-        v-model="user.userPassword"
-        size="small"
-        type="password"
-        clearable
-        placeholder="请输入密码"
-      />
+            <!-- 密码 -->
+            <p class="title">密码</p>
+            <el-input
+              v-model="user.userPassword"
+              size="small"
+              type="password"
+              clearable
+              placeholder="请输入密码"
+            />
 
-      <el-button
-        type="success"
-        size="small"
-        :loading="loading"
-        @click="subonLogin"
-      >
-        登入
-      </el-button>
-    </div>
+            <el-button
+              type="success"
+              size="small"
+              :loading="loading"
+              @click="subonLogin"
+            >
+              登入
+            </el-button>
+          </div>
 
-    <!-- 注册 -->
-    <div
-      class="registerBox"
-    >
-      <p>没有账号？</p>
-      <p
-        class="addNumber"
-        @click="onRegister"
-      >
-        创建一个账户
-      </p>
-    </div>
+          <!-- 注册 -->
+          <div
+            class="registerBox"
+          >
+            <p>没有账号？</p>
+            <p
+              class="addNumber"
+              @click="onRegister"
+            >
+              创建一个账户
+            </p>
+          </div>
 
-    <p
-      class="goHome"
-      @click="$router.push('/')"
-    >
-      返回首页
-    </p>
+          <p
+            class="goHome"
+            @click="$router.push('/')"
+          >
+            返回首页
+          </p>
+        </div>
+      </kinesis-element>
+    </kinesis-container>
   </div>
 </template>
 
 <script>
+// 提示框
 import { Message } from 'at-ui'
+// 登录
 import { onLogin } from '@/api/user'
+// 加载交互式动画组件
+import { KinesisContainer, KinesisElement } from 'vue-kinesis'
 export default {
   name: 'loginIndex',
+  components: {
+    KinesisContainer,
+    KinesisElement
+  },
   data () {
     return {
       user: {
@@ -134,17 +149,21 @@ export default {
 #loginIndex {
   width: 400px;
   height: 500px;
-  background-color: #fff;
-  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.3), 0 0 7px 2px rgba(0, 0, 0, 0.15);
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
   margin: auto;
-  padding: 30px;
-  box-sizing: border-box;
-  border-radius: 4px;
+  #loginBox {
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.3), 0 0 7px 2px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
 }
 .photo {
   width: 50px;
