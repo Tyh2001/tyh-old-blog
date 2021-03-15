@@ -5,8 +5,8 @@
   >
     <!-- 第一段内容 -->
     <div class="content1">
-      <h1 class="listC1">“ 慢慢来吧 谁都有努力的过程 ”</h1>
-      <p class="listE1">“ man man lai ba shei dou you nu li de guo cheng ”</p>
+      <h1 class="listC1">“ 慢慢来吧，谁都有努力的过程。 ”</h1>
+      <p class="listE1">" man man lai ba, shei dou you nu li de guo cheng. "</p>
       <img
         class="image1"
         src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1Wn8LQ8L7IVMuua*LlMq7yHuu6mKZBpXmmaS1ETexiFkjx3dIJt7dMUgYPezer2UMg!/r"
@@ -17,7 +17,7 @@
     <div class="content">
       <div class="words">
         <h1 class="listC2">“ 我们在很久很久以前，就没有以后了 ”</h1>
-        <p class="listE2">“ wo men zai hen jiu hen jiu yi qian, jiu mei you yi hou le ”</p>
+        <p class="listE2">" wo men zai hen jiu hen jiu yi qian, jiu mei you yi hou le "</p>
       </div>
       <div class="picture">
         <img
@@ -35,28 +35,18 @@
       </div>
       <div class="words">
         <h1 class="listC3">“ 愿我最爱的人，也最爱我 ”</h1>
-        <p class="listE3">“ yuan wo zui ai de ren, ye zui ai wo ”</p>
+        <p class="listE3">" yuan wo zui ai de ren, ye zui ai wo "</p>
       </div>
     </div>
 
     <!-- 第四段内容 -->
     <div class="content">
       <div>
-        <h1
-          class="listC4"
-          :style=" theme ?'color: #c9d1d9;' : 'color: #32373c;'"
-        >
-          “ 最怕你一生碌碌无为，还安慰自己平凡可贵 ”
-        </h1>
-        <p
-          class="listE4"
-          :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
-        >
-          “ zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui ”
-        </p>
+        <h1 class="listC4">“ 最怕你一生碌碌无为，还安慰自己平凡可贵 ”</h1>
+        <p class="listE4">" zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui "</p>
         <img
           class="picture-4"
-          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1XYrM3BWXZluTuyuPHd5ArS2is91J4.xP5s60KfihPoutaY87db.B7o5qKYNwqeyfw!/r"
+          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcfnLIouOSdqNmrw8IdvbnZbonou3sEgQbHPgAm0peQ39SljnyFXpNNaSZQLkzIIvijBI*PoIyyILYeCHRj5RhWk!/r"
         >
       </div>
     </div>
@@ -153,11 +143,11 @@ export default {
   }
   .listC4 {
     font-size: 25px;
-    color: rgb(35, 40, 45);
+    color: rgb(207, 116, 161);
     text-align: center;
   }
   .listE4 {
-    color: rgb(35, 40, 45);
+    color: rgb(207, 116, 161);
     text-align: center;
   }
   .picture-4 {

@@ -163,72 +163,72 @@ export default {
     padding: 30px;
     box-sizing: border-box;
     border-radius: 4px;
+    .photo {
+      width: 50px;
+      margin: auto;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid rgba(216, 216, 216, 0.4);
+        cursor: pointer;
+      }
+    }
+    // 欢迎
+    .Welcome {
+      text-align: center;
+      color: #24292e;
+      font-size: 20px;
+      margin: 20px 0 20px 0;
+    }
+    // 登录盒子
+    .loginBox {
+      width: 100%;
+      background: #f6f8fa;
+      border: 1px solid #eaecef;
+      border-radius: 5px;
+      padding: 20px;
+      box-sizing: border-box;
+      // 描述文字
+      .title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #24292e;
+        margin-bottom: 3px;
+      }
+      .el-input {
+        margin-bottom: 14px;
+      }
+      // 登录按钮
+      .el-button {
+        width: 100%;
+        background: #2ea44f;
+      }
+    }
+    // 注册盒子
+    .registerBox {
+      width: 100%;
+      height: 40px;
+      border: 1px solid #d1d5da;
+      border-radius: 5px;
+      margin: 24px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+      .addNumber {
+        color: #0366d6;
+      }
+    }
+    // 返回首页
+    .goHome {
+      font-size: 14px;
+      color: #0366d6;
+      float: right;
+      cursor: pointer;
+    }
   }
-}
-.photo {
-  width: 50px;
-  margin: auto;
-  img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 3px solid rgba(216, 216, 216, 0.4);
-    cursor: pointer;
-  }
-}
-// 欢迎
-.Welcome {
-  text-align: center;
-  color: #24292e;
-  font-size: 20px;
-  margin: 20px 0 20px 0;
-}
-// 登录盒子
-.loginBox {
-  width: 100%;
-  background: #f6f8fa;
-  border: 1px solid #eaecef;
-  border-radius: 5px;
-  padding: 20px;
-  box-sizing: border-box;
-  // 描述文字
-  .title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #24292e;
-    margin-bottom: 3px;
-  }
-  .el-input {
-    margin-bottom: 14px;
-  }
-  // 登录按钮
-  .el-button {
-    width: 100%;
-    background: #2ea44f;
-  }
-}
-// 注册盒子
-.registerBox {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #d1d5da;
-  border-radius: 5px;
-  margin: 24px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  cursor: pointer;
-  user-select: none;
-  .addNumber {
-    color: #0366d6;
-  }
-}
-// 返回首页
-.goHome {
-  font-size: 14px;
-  color: #0366d6;
-  float: right;
-  cursor: pointer;
 }
 </style>
