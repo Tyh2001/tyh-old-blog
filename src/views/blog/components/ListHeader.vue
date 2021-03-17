@@ -1,12 +1,13 @@
 <template>
   <div id="ListHeader">
+    <!-- 列表头部 包含头像 昵称 时间 删除等 -->
     <!-- 我的资料 -->
     <div class="userInfo">
       <!-- 头像 -->
       <div class="photoBox">
         <img
           class="userPhoto"
-          src="https://wx1.sinaimg.cn/large/007LmPOmly1go95lrt7nrj30m30m3n5c.jpg"
+          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH*eweuL31n36RYREYa561J4!/r"
         >
       </div>
       <div class="info">
