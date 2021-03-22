@@ -117,7 +117,7 @@ export default {
 }
 // 整个大盒子的宽度
 .v-note-wrapper {
-  width: 800px;
+  width: 780px;
   margin: auto;
   z-index: 500;
 }
