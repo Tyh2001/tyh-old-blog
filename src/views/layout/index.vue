@@ -15,7 +15,7 @@
         <el-menu-item index="/">首页</el-menu-item>
         <el-menu-item index="/blog">我的动态</el-menu-item>
         <el-menu-item index="/article">技术文章</el-menu-item>
-        <el-menu-item index="/square">广场</el-menu-item>
+        <el-menu-item index="/comment">评论留言</el-menu-item>
       </div>
 
       <AboutMe />

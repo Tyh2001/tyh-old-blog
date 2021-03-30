@@ -35,3 +35,11 @@ export const getOtherDoc = () => {
     url: '/tyh/document/other'
   })
 }
+
+// 获取评论留言列表
+export const getCommitList = () => {
+  return request({
+    method: 'GET',
+    url: '/tyh/commitList'
+  })
+}

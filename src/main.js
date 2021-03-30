@@ -8,11 +8,9 @@ import './style/icon.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-// import AtComponents from 'at-ui'
 import 'at-ui-style'
 
 Vue.use(ElementUI)
-// Vue.use(AtComponents)
 
 Vue.config.productionTip = false
 

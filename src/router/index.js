@@ -38,11 +38,11 @@ const routes = [
         component: () => import('@/views/article'),
         meta: { requiresAuth: true }
       },
-      // 广场
+      // 留言
       {
-        path: '/square',
-        name: 'square',
-        component: () => import('@/views/square'),
+        path: '/comment',
+        name: 'comment',
+        component: () => import('@/views/comment'),
         meta: { requiresAuth: true }
       },
       // 设置

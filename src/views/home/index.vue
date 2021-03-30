@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="homeIndex">
     <!-- 主页说明 -->
     <div class="bigExplain">
       <div class="explain">
@@ -76,7 +76,7 @@ import Time from './components/Time' // 时间罗盘
 import BottomList from './components/BottomList' // 底部图片文案
 import { mapState } from 'vuex' // 映射 vuex
 export default {
-  name: 'homeeIndex',
+  name: 'homeIndex',
   components: {
     Time,
     BottomList
@@ -116,6 +116,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#homeIndex {
+  width: 100%;
+  height: 100%;
+  background-image: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcSaKWOmFSJoMJUY45e6kJ2JByoQl1J4TuWYUaHXDjpOZ2oQf3lWi5Jsg5CBTksk*wnMNZEgrHXd4cJVz3Li2Jp8!/r);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 // 主页说明
 .bigExplain {
   background-image: url(https://api.wod.xyz/Image/GetImage?type=1);
