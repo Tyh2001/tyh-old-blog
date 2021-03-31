@@ -20,7 +20,10 @@
             v-for="(commentList, index) in commentLists"
             :key="index"
           >
-            <at-card>
+            <!-- 留言卡片 -->
+            <at-card
+              :style="{ 'background-image': 'url(' + commentList.backgroundImg + ')'}"
+            >
               <h4 slot="title">{{ commentList.time }}</h4>
               <div slot="extra">{{ commentList.username }}</div>
               <div>
@@ -46,7 +49,7 @@ import Vue from 'vue'
 import { Card } from 'at-ui'
 Vue.use(Card)
 export default {
-  name: 'squareIndex',
+  name: 'commentIndex',
   components: {},
   props: {},
   data () {
@@ -109,13 +112,10 @@ export default {
         display: inline-block;
         .at-card {
           width: 100%;
-          color: #fff;
-          background: url('./images/4dvzl4.jpg') no-repeat;
+          cursor: pointer;
+          background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
-          h4 {
-            color: #fff;
-          }
         }
       }
     }
