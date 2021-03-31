@@ -58,12 +58,13 @@
 </template>
 
 <script>
+import Vue from 'vue'
 // 页脚组件
 import FooterList from '@/components/FooterList'
-import { mapState } from 'vuex' // 映射 vuex
+// 映射 vuex
+import { mapState } from 'vuex'
 // 获取评论留言列表
 import { getCommitList } from '@/api/article'
-import Vue from 'vue'
 // 引入 at-ui 组件
 import { Card, Button } from 'at-ui'
 Vue.use(Card)
@@ -195,14 +196,5 @@ export default {
       }
     }
   }
-}
-// 页脚
-.footer {
-  width: 100%;
-  height: 200px;
-  background: skyblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 </style>
