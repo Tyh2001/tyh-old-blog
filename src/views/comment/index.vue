@@ -110,6 +110,7 @@ export default {
         margin-top: 20px;
         width: 240px;
         display: inline-block;
+        z-index: 10;
         .at-card {
           width: 100%;
           cursor: pointer;
@@ -117,6 +118,11 @@ export default {
           background-position: center;
           background-size: cover;
         }
+      }
+      .item:hover {
+        z-index: 200;
+        transition: 0.25s;
+        transform: scale(1.13);
       }
     }
   }
