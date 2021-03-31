@@ -1,17 +1,32 @@
 <template>
-  <div>
+  <div id="commentIndex">
     <!-- 最上方背景图 -->
     <div class="topBackground"></div>
 
     <!-- 评论内容框 -->
-    <div id="comment-list">
+    <div
+      id="comment-list"
+      :style="theme ? 'background: #0d1117;' : 'background: #eceff1;'"
+    >
       <div class="comment-all">
         <!-- 留言框 -->
         <h2>留言</h2>
-        <el-input
-          type="textarea"
-          v-model="comment"
-        />
+        <div class="inputBox">
+          <el-input
+            type="textarea"
+            v-model="comment"
+          />
+          <div class="switchBox">
+            <div>
+              <i class="tyh tyh-tupian" />
+              <i class="tyh tyh-biaoqing" />
+            </div>
+            <at-button
+              type="primary"
+              size="small"
+            >发布</at-button>
+          </div>
+        </div>
 
         <!-- 瀑布流 -->
         <div class="comment-item">
@@ -23,7 +38,9 @@
             <!-- 留言卡片 -->
             <at-card
               no-hover
-              :style="{ 'background-image': 'url(' + commentList.backgroundImg + ')'}"
+              :style="{
+                'background-image': 'url(' + commentList.backgroundImg + ')'
+              }"
             >
               <h4 slot="title">{{ commentList.time }}</h4>
               <div slot="extra">{{ commentList.username }}</div>
@@ -36,22 +53,26 @@
       </div>
     </div>
 
-    <div class="footer">
-      这是页脚内容
-    </div>
+    <FooterList />
   </div>
 </template>
 
 <script>
+// 页脚组件
+import FooterList from '@/components/FooterList'
+import { mapState } from 'vuex' // 映射 vuex
 // 获取评论留言列表
 import { getCommitList } from '@/api/article'
 import Vue from 'vue'
 // 引入 at-ui 组件
-import { Card } from 'at-ui'
+import { Card, Button } from 'at-ui'
 Vue.use(Card)
+Vue.use(Button)
 export default {
   name: 'commentIndex',
-  components: {},
+  components: {
+    FooterList
+  },
   props: {},
   data () {
     return {
@@ -59,7 +80,10 @@ export default {
       comment: '' // 评论内容
     }
   },
-  computed: {},
+  computed: {
+    // 获取到 vuex 中主题状态
+    ...mapState(['theme'])
+  },
   watch: {},
   created () {
     this.loadgetCommitList() // 获取评论留言列表
@@ -90,11 +114,27 @@ export default {
   border-top-right-radius: 40px;
   margin-top: -40px;
   background: #fff;
+  padding-bottom: 70px;
   // 文本框
-  .el-textarea {
+  .inputBox {
     max-width: 500px;
-    /deep/ .el-textarea__inner {
-      height: 90px;
+    .el-textarea {
+      width: 100%;
+      /deep/ .el-textarea__inner {
+        height: 90px;
+      }
+    }
+    // 操作按钮
+    .switchBox {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      i {
+        font-size: 24px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
     }
   }
   // 整个下方内容
@@ -160,8 +200,7 @@ export default {
 .footer {
   width: 100%;
   height: 200px;
-  margin-top: 70px;
-  background: #eee;
+  background: skyblue;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -52,15 +52,7 @@
     </div>
 
     <!-- 页脚 -->
-    <div
-      class="footer"
-      :style="theme ? 'background: #24282f;' : 'background: #f7f7f7;'"
-    >
-      ——
-      <img src="../../../../public/上方小图标.png">
-      此网站 2021-2-28 22:22 发布上线 Tyh.
-      ——
-    </div>
+    <FooterList />
 
     <!-- 返回顶部 -->
     <el-backtop>
@@ -71,9 +63,14 @@
 </template>
 
 <script>
+// 页脚组件
+import FooterList from '@/components/FooterList'
 import { mapState } from 'vuex' // 映射 vuex
 export default {
   name: 'BottomList',
+  components: {
+    FooterList
+  },
   computed: {
     // 获取到 vuex 中主题状态
     ...mapState(['theme'])
@@ -177,21 +174,6 @@ export default {
 @media (max-width: 610px) {
   .content {
     max-width: 500px;
-  }
-}
-// 页脚
-.footer {
-  width: 100%;
-  margin-top: 60px;
-  border-top: 1px solid #dfdfdf;
-  height: 230px;
-  color: #0073bb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 20px;
-    margin:0 6px 0 6px;
   }
 }
 .el-backtop {

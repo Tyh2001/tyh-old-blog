@@ -91,22 +91,7 @@ export default {
       loading: false // 按钮 loading
     }
   },
-  mounted () {
-    // 页面加载完成之后显示弹框
-    this.$notify.info({
-      title: '登录账号',
-      message: (`
-        游客登录测试账号：
-        <br />
-        账号：15211111111
-        <br />
-        密码：12345678
-      `),
-      dangerouslyUseHTMLString: true,
-      duration: 0,
-      position: 'top-left'
-    })
-  },
+  mounted () {},
   methods: {
     // 登录
     async subonLogin () {
