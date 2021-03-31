@@ -11,10 +11,8 @@
         type="textarea"
         v-model="comment"
       />
-
-      <el-divider />
-
       <div class="commit-all">
+
         <div
           class="item"
           v-for="(commentList, index) in commentLists"
@@ -84,19 +82,19 @@ export default {
   padding: 80px 100px 0 100px;
   // 文本框
   .el-textarea {
-    width: 500px;
+    // width: 500px;
     /deep/ .el-textarea__inner {
       height: 90px;
     }
   }
   // 瀑布流菜单
   .commit-all {
-    width: 100%;
+    margin: 0 auto;
+    width: 980px;
     column-count: 4;
-    column-gap: 20px;
     .item {
       width: 240px;
-      padding: 15px;
+      padding: 15px 6px 0 0;
       display: inline-block;
       .at-card {
         width: 100%;
@@ -108,6 +106,24 @@ export default {
           color: #fff;
         }
       }
+    }
+  }
+  @media (max-width: 1100px) {
+    .commit-all {
+      width: 740px;
+      column-count: 3;
+    }
+  }
+  @media (max-width: 900px) {
+    .commit-all {
+      width: 500px;
+      column-count: 2;
+    }
+  }
+  @media (max-width: 630px) {
+    .commit-all {
+      width: 260px;
+      column-count: 1;
     }
   }
 }
