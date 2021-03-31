@@ -5,28 +5,35 @@
 
     <!-- 评论内容框 -->
     <div id="comment-list">
-      <!-- 留言框 -->
-      <h2>留言</h2>
-      <el-input
-        type="textarea"
-        v-model="comment"
-      />
-      <div class="commit-all">
+      <div class="comment-all">
+        <!-- 留言框 -->
+        <h2>留言</h2>
+        <el-input
+          type="textarea"
+          v-model="comment"
+        />
 
-        <div
-          class="item"
-          v-for="(commentList, index) in commentLists"
-          :key="index"
-        >
-          <at-card>
-            <h4 slot="title">{{ commentList.time }}</h4>
-            <div slot="extra">{{ commentList.username }}</div>
-            <div>
-              {{ commentList.comment }}
-            </div>
-          </at-card>
+        <!-- 瀑布流 -->
+        <div class="comment-item">
+          <div
+            class="item"
+            v-for="(commentList, index) in commentLists"
+            :key="index"
+          >
+            <at-card>
+              <h4 slot="title">{{ commentList.time }}</h4>
+              <div slot="extra">{{ commentList.username }}</div>
+              <div>
+                {{ commentList.comment }}
+              </div>
+            </at-card>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="footer">
+      这是页脚内容
     </div>
   </div>
 </template>
@@ -79,52 +86,76 @@ export default {
   border-top-right-radius: 40px;
   margin-top: -40px;
   background: #fff;
-  padding: 80px 100px 0 100px;
   // 文本框
   .el-textarea {
-    // width: 500px;
+    max-width: 500px;
     /deep/ .el-textarea__inner {
       height: 90px;
     }
   }
-  // 瀑布流菜单
-  .commit-all {
+  // 整个下方内容
+  .comment-all {
+    padding-top: 50px;
     margin: 0 auto;
     width: 980px;
-    column-count: 4;
-    .item {
-      width: 240px;
-      padding: 15px 6px 0 0;
-      display: inline-block;
-      .at-card {
-        width: 100%;
-        color: #fff;
-        background: url('./images/4dvzl4.jpg') no-repeat;
-        background-position: center;
-        background-size: cover;
-        h4 {
+    // 瀑布流菜单
+    .comment-item {
+      margin: 40px auto;
+      width: 980px;
+      column-count: 4;
+      .item {
+        margin-top: 20px;
+        width: 240px;
+        display: inline-block;
+        .at-card {
+          width: 100%;
           color: #fff;
+          background: url('./images/4dvzl4.jpg') no-repeat;
+          background-position: center;
+          background-size: cover;
+          h4 {
+            color: #fff;
+          }
         }
       }
     }
   }
   @media (max-width: 1100px) {
-    .commit-all {
+    .comment-all {
       width: 740px;
-      column-count: 3;
+      .comment-item {
+        width: 740px;
+        column-count: 3;
+      }
     }
   }
   @media (max-width: 900px) {
-    .commit-all {
+    .comment-all {
       width: 500px;
-      column-count: 2;
+      .comment-item {
+        width: 500px;
+        column-count: 2;
+      }
     }
   }
   @media (max-width: 630px) {
-    .commit-all {
-      width: 260px;
-      column-count: 1;
+    .comment-all {
+      width: 240px;
+      .comment-item {
+        width: 240px;
+        column-count: 1;
+      }
     }
   }
+}
+// 页脚
+.footer {
+  width: 100%;
+  height: 200px;
+  margin-top: 120px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
