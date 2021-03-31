@@ -22,6 +22,7 @@
           >
             <!-- 留言卡片 -->
             <at-card
+              no-hover
               :style="{ 'background-image': 'url(' + commentList.backgroundImg + ')'}"
             >
               <h4 slot="title">{{ commentList.time }}</h4>
@@ -98,12 +99,12 @@ export default {
   }
   // 整个下方内容
   .comment-all {
+    width: 980px;
     padding-top: 50px;
     margin: 0 auto;
-    width: 980px;
     // 瀑布流菜单
     .comment-item {
-      margin: 40px auto;
+      margin: 0 auto;
       width: 980px;
       column-count: 4;
       .item {
@@ -123,6 +124,7 @@ export default {
         z-index: 200;
         transition: 0.25s;
         transform: scale(1.13);
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -158,7 +160,7 @@ export default {
 .footer {
   width: 100%;
   height: 200px;
-  margin-top: 120px;
+  margin-top: 70px;
   background: #eee;
   display: flex;
   justify-content: center;
