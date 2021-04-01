@@ -19,8 +19,21 @@
           <div class="switchBox">
             <!-- 添加图片和表情的选项 -->
             <div>
-              <i class="tyh tyh-tupian" />
-              <input type="file" hidden>
+              <!-- 添加图片 -->
+              <i
+                class="tyh tyh-tupian"
+                @click="$refs['upImg-Inp'].click()"
+              />
+              <!-- 上传图片的文本框 -->
+              <input
+                ref="upImg-Inp"
+                type="file"
+                accept="image/*"
+                hidden
+                @change="fileChange"
+              />
+
+              <!-- 添加表情 -->
               <i class="tyh tyh-biaoqing" />
             </div>
             <at-button
@@ -31,6 +44,9 @@
               发布
             </at-button>
           </div>
+
+          <!-- 选择展示的图片 -->
+          <img width="300px" :src="commentList.backgroundImg" alt="">
         </div>
 
         <!-- 瀑布流 -->
@@ -72,6 +88,8 @@ import { mapState } from 'vuex'
 import { getCommitList } from '@/api/article'
 // 引入 at-ui 组件
 import { Card, Button, Message } from 'at-ui'
+// 本地存储方法
+import { getStorage } from '@/utils/storage'
 Vue.use(Card)
 Vue.use(Button)
 export default {
@@ -81,20 +99,27 @@ export default {
   },
   props: {},
   data () {
+    const time = new Date() // 获取当前时间
+    const year = time.getFullYear() // 获取年份
+    const month = time.getMonth() + 1 // 获取月份
+    const day = time.getDate() // 获取日
+    const hour = time.getHours() // 获取小时
+    const minute = time.getMinutes() // 获取分钟
     return {
       commentLists: [], // 评论留言列表
       // 评论内容列表
       commentList: {
         backgroundImg: '', // 背景图
         comment: '', // 评论内容
-        time: Date.now(), // 发布时间
-        username: '' // 用户昵称
-      }
+        time: `${year}-${month}-${day} ${hour}:${minute}`, // 发布时间
+        username: getStorage('userInfo').name // 用户昵称
+      },
+      blobPicture: '' // 需要上传的图片编码
     }
   },
   computed: {
     // 获取到 vuex 中主题状态
-    ...mapState(['theme'])
+    ...mapState(['theme', 'userInfo'])
   },
   watch: {},
   created () {
@@ -122,7 +147,12 @@ export default {
           time,
           username
         }
+
+        // 将新的内容添加到的数组的首个
         this.commentLists.unshift(res)
+
+        // 发布完成之后清除图片地址和文字内容
+        this.commentList.backgroundImg = ''
         this.commentList.comment = ''
         Message.success({
           message: '评论成功',
@@ -135,6 +165,12 @@ export default {
           duration: 1000
         })
       }
+    },
+    // 当选择上传的图片之后
+    fileChange () {
+      const file = this.$refs['upImg-Inp']
+      const blob = window.URL.createObjectURL(file.files[0])
+      this.commentList.backgroundImg = blob
     }
   }
 }
@@ -199,6 +235,7 @@ export default {
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
+          color: #fff;
         }
       }
       .item:hover {

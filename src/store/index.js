@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+// 本地存储方法
+import { getStorage, setStorage } from '@/utils/storage'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     theme: false, // 主题状态
-    userInfo: JSON.parse(window.localStorage.getItem('userInfo')) // 用户信息
+    userInfo: getStorage('userInfo') // 用户信息
   },
   mutations: {
     // 更改主题状态
@@ -18,7 +21,7 @@ export default new Vuex.Store({
       state.userInfo = info
 
       // 用信息设置本地存储
-      window.localStorage.setItem('userInfo', JSON.stringify(info))
+      setStorage('userInfo', info)
     }
   },
   actions: {},
