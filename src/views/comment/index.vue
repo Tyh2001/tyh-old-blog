@@ -17,8 +17,10 @@
             v-model="commentList.comment"
           />
           <div class="switchBox">
+            <!-- 添加图片和表情的选项 -->
             <div>
               <i class="tyh tyh-tupian" />
+              <input type="file" hidden>
               <i class="tyh tyh-biaoqing" />
             </div>
             <at-button
@@ -69,7 +71,7 @@ import { mapState } from 'vuex'
 // 获取评论留言列表
 import { getCommitList } from '@/api/article'
 // 引入 at-ui 组件
-import { Card, Button } from 'at-ui'
+import { Card, Button, Message } from 'at-ui'
 Vue.use(Card)
 Vue.use(Button)
 export default {
@@ -107,19 +109,32 @@ export default {
     },
     // 添加新的留言
     addtoCom () {
-      const backgroundImg = this.commentList.backgroundImg
-      const comment = this.commentList.comment
-      const time = this.commentList.time
-      const username = this.commentList.username
+      // 如果有内容 就执行发布操作
+      if (this.commentList.comment !== '') {
+        const backgroundImg = this.commentList.backgroundImg
+        const comment = this.commentList.comment
+        const time = this.commentList.time
+        const username = this.commentList.username
 
-      const res = {
-        backgroundImg,
-        comment,
-        time,
-        username
+        const res = {
+          backgroundImg,
+          comment,
+          time,
+          username
+        }
+        this.commentLists.unshift(res)
+        this.commentList.comment = ''
+        Message.success({
+          message: '评论成功',
+          duration: 1000
+        })
+      } else {
+        // 否则弹出提示框
+        Message.error({
+          message: '内容为空不能发布',
+          duration: 1000
+        })
       }
-      this.commentLists.unshift(res)
-      this.commentList.comment = ''
     }
   }
 }
