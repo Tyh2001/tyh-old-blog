@@ -94,7 +94,7 @@ export default {
   methods: {
     // 点击更改密码按钮
     changePassWord () {
-      console.log('更改密码1234')
+      console.log('更改密码')
     }
   }
 }
