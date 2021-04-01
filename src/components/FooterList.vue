@@ -70,8 +70,8 @@ export default {
       justify-content: center;
       align-items: center;
       .Myphoto {
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         border: 4px solid rgba(255, 255, 255, 0.3);
         border-radius: 50%;
       }

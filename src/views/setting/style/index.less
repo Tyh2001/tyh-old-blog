@@ -1,0 +1,72 @@
+#settingIndex {
+	width: 650px;
+	margin: 15px auto;
+	padding-bottom: 50px;
+	// 头部
+	#HeaderInfo {
+		width: 100%;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		.photo {
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+		}
+		.nameBox {
+			margin-left: 10px;
+		}
+	}
+	// 表单
+	.userForm {
+		display: flex;
+		// 资料
+		.info {
+			width: 450px;
+			padding: 30px;
+			box-sizing: border-box;
+			.el-select {
+				width: 100%;
+			}
+			.el-button {
+				width: 100%;
+				border: none;
+				background: #2ea44f;
+			}
+			// 退出登录
+			.outLogin {
+				background: rgb(243, 99, 63);
+			}
+		}
+		// 用户头像
+		.userPhoto {
+			width: 200px;
+			.userImg {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				cursor: pointer;
+				border: 3px solid rgba(176, 226, 255, 0.5);
+			}
+			// 修改头像
+			.changePhoto {
+				width: 50px;
+				height: 22px;
+				font-size: 12px;
+				border: 1px solid rgb(197, 195, 195);
+				background: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 8px;
+				cursor: pointer;
+				position: relative;
+				top: -25px;
+				right: -5px;
+				i {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

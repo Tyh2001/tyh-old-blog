@@ -151,6 +151,9 @@ export default {
     width: 100%;
   }
 }
+.content:nth-child(4) {
+  padding-bottom: 80px;
+}
 @media (max-width: 1100px) {
   .content {
     max-width: 900px;

@@ -17,16 +17,17 @@
         返回上一层
       </p>
     </div>
-    <div class="footer">
-      <img src="../../../public/上方小图标.png" alt="">
-      Tyh.
-    </div>
+    <FooterList />
   </div>
 </template>
 
 <script>
+import FooterList from '@/components/FooterList'
 export default {
   name: 'err',
+  components: {
+    FooterList
+  },
   data () {
     return {
       time: 5,
