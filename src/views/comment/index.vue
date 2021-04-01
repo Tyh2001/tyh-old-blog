@@ -14,7 +14,7 @@
         <div class="inputBox">
           <el-input
             type="textarea"
-            v-model="comment"
+            v-model="commentList.comment"
           />
           <div class="switchBox">
             <div>
@@ -24,7 +24,10 @@
             <at-button
               type="primary"
               size="small"
-            >发布</at-button>
+              @click="addtoCom"
+            >
+              发布
+            </at-button>
           </div>
         </div>
 
@@ -78,7 +81,13 @@ export default {
   data () {
     return {
       commentLists: [], // 评论留言列表
-      comment: '' // 评论内容
+      // 评论内容列表
+      commentList: {
+        backgroundImg: '', // 背景图
+        comment: '', // 评论内容
+        time: Date.now(), // 发布时间
+        username: '' // 用户昵称
+      }
     }
   },
   computed: {
@@ -95,6 +104,22 @@ export default {
     async loadgetCommitList () {
       const { data } = await getCommitList()
       this.commentLists = data.commentList
+    },
+    // 添加新的留言
+    addtoCom () {
+      const backgroundImg = this.commentList.backgroundImg
+      const comment = this.commentList.comment
+      const time = this.commentList.time
+      const username = this.commentList.username
+
+      const res = {
+        backgroundImg,
+        comment,
+        time,
+        username
+      }
+      this.commentLists.unshift(res)
+      this.commentList.comment = ''
     }
   }
 }
