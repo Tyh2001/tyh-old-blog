@@ -18,11 +18,12 @@
           />
           <div class="switchBox">
             <!-- 添加图片和表情的选项 -->
-            <div>
+            <div class="switch">
               <!-- 添加图片 -->
               <i
                 class="tyh tyh-tupian"
                 @click="$refs['upImg-Inp'].click()"
+                title="插入背景"
               />
               <!-- 上传图片的文本框 -->
               <input
@@ -34,11 +35,23 @@
               />
 
               <!-- 添加表情 -->
-              <i class="tyh tyh-biaoqing" />
+              <i
+                class="tyh tyh-biaoqing"
+                title="插入表情"
+              />
+
+              <!-- 选择字体颜色 -->
+              <el-color-picker
+                v-model="commentList.textColor"
+                size="small"
+                :predefine="predefineColors"
+                title="字体颜色"
+              />
             </div>
             <at-button
               type="primary"
               size="small"
+              :disabled="btndisabled"
               @click="addtoCom"
             >
               发布
@@ -46,7 +59,7 @@
           </div>
 
           <!-- 选择展示的图片 -->
-          <img width="300px" :src="commentList.backgroundImg" alt="">
+          <img width="300px" :src="commentList.backgroundImg" />
         </div>
 
         <!-- 瀑布流 -->
@@ -65,7 +78,7 @@
             >
               <h4 slot="title">{{ commentList.time }}</h4>
               <div slot="extra">{{ commentList.username }}</div>
-              <div>
+              <div :style="{'color': commentList.textColor}">
                 {{ commentList.comment }}
               </div>
             </at-card>
@@ -87,11 +100,12 @@ import { mapState } from 'vuex'
 // 获取评论留言列表
 import { getCommitList } from '@/api/article'
 // 引入 at-ui 组件
-import { Card, Button, Message } from 'at-ui'
+import { Card, Button, Message, LoadingBar } from 'at-ui'
 // 本地存储方法
 import { getStorage } from '@/utils/storage'
 Vue.use(Card)
 Vue.use(Button)
+Vue.prototype.$Loading = LoadingBar
 export default {
   name: 'commentIndex',
   components: {
@@ -112,9 +126,22 @@ export default {
         backgroundImg: '', // 背景图
         comment: '', // 评论内容
         time: `${year}-${month}-${day} ${hour}:${minute}`, // 发布时间
-        username: getStorage('userInfo').name // 用户昵称
+        username: getStorage('userInfo').name, // 用户昵称
+        textColor: '#000000' // 选择字体的颜色
       },
-      blobPicture: '' // 需要上传的图片编码
+      blobPicture: '', // 需要上传的图片编码
+      // 颜色选择预选的颜色
+      predefineColors: [
+        '#ffffff',
+        '#ff4500',
+        '#ff8c00',
+        '#ffd700',
+        '#90ee90',
+        '#00ced1',
+        '#1e90ff',
+        '#c71585'
+      ],
+      btndisabled: false // 发布按钮是否禁用
     }
   },
   computed: {
@@ -134,36 +161,45 @@ export default {
     },
     // 添加新的留言
     addtoCom () {
+      this.btndisabled = true
       // 如果有内容 就执行发布操作
       if (this.commentList.comment !== '') {
         const backgroundImg = this.commentList.backgroundImg
         const comment = this.commentList.comment
         const time = this.commentList.time
         const username = this.commentList.username
+        const textColor = this.commentList.textColor
 
         const res = {
           backgroundImg,
           comment,
           time,
-          username
+          username,
+          textColor
         }
 
         // 将新的内容添加到的数组的首个
         this.commentLists.unshift(res)
 
+        this.$Loading.finish()
+
         // 发布完成之后清除图片地址和文字内容
         this.commentList.backgroundImg = ''
         this.commentList.comment = ''
+        this.commentList.textColor = '#000000'
         Message.success({
           message: '评论成功',
           duration: 1000
         })
+        this.btndisabled = false
       } else {
+        this.$Loading.error()
         // 否则弹出提示框
         Message.error({
           message: '内容为空不能发布',
           duration: 1000
         })
+        this.btndisabled = false
       }
     },
     // 当选择上传的图片之后
@@ -212,6 +248,11 @@ export default {
         cursor: pointer;
         margin-right: 10px;
       }
+      .switch {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
     }
   }
   // 整个下方内容
@@ -235,7 +276,7 @@ export default {
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
-          color: #fff;
+          font-weight: 600;
         }
       }
       .item:hover {

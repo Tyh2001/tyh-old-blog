@@ -20,7 +20,9 @@
 
       <AboutMe />
     </el-menu>
+
     <router-view />
+
   </div>
 </template>
 
@@ -39,7 +41,12 @@ export default {
   border: 0;
 }
 #layoutIndex {
-  padding-top: 60px;
+  // padding-top: 60px;
+  // background: red;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  right: 0px;
 }
 // 导航栏
 .el-menu-demo {
