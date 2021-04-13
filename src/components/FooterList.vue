@@ -17,7 +17,7 @@
         <a target="_blank" href="https://github.com/Tyh2001" title="Github">
           <i class="tyh tyh-github" />
         </a>
-        <a target="_blank" href="https://gitee.com/" title="Gitee">
+        <a target="_blank" href="https://gitee.com/tyh666999" title="Gitee">
           <i class="tyh tyh-gitee" />
         </a>
         <a target="_blank" href="https://www.zhihu.com/people/nan-gua-zui-kai-xin" title="知乎">
