@@ -159,7 +159,7 @@ export default {
     max-width: 900px;
   }
 }
-@media (max-width: 910px) {
+@media (max-width: 920px) {
   .content {
     max-width: 800px;
   }
@@ -169,7 +169,7 @@ export default {
     max-width: 700px;
   }
 }
-@media (max-width: 710px) {
+@media (max-width: 720px) {
   .content {
     max-width: 600px;
   }

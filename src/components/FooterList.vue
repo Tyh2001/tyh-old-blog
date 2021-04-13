@@ -1,6 +1,6 @@
 <template>
   <div id="FooterList">
-    <div id="FooterList-Box">
+    <div class="foot-data">
       <div class="footer-data">
         <img
           class="Myphoto"
@@ -55,17 +55,13 @@ export default {
   height: 230px;
   background: rgb(35, 40, 45);
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  #FooterList-Box {
-    width: 980px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     // 我的资料
+  .foot-data {
+    // 我的资料
     .footer-data {
       width: 440px;
+      margin: auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -88,11 +84,17 @@ export default {
         }
       }
     }
-    // 右边外链
+    // 外链
     .footer-website {
+      padding-top: 20px;
+      width: 300px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       i {
         margin-right: 20px;
-        font-size: 40px;
+        font-size: 30px;
         cursor: pointer;
         position: relative;
         color: rgb(63, 83, 110);
