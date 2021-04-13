@@ -174,9 +174,14 @@ export default {
     max-width: 600px;
   }
 }
-@media (max-width: 610px) {
+@media (max-width: 620px) {
   .content {
     max-width: 500px;
+  }
+}
+@media (max-width: 520px) {
+  .content {
+    max-width: 400px;
   }
 }
 .el-backtop {
