@@ -1,5 +1,6 @@
 <template>
   <div id="homeIndex">
+    <div id="home-backgroundBox"></div>
     <!-- 主页说明 -->
     <div class="bigExplain">
       <div class="explain">
@@ -66,7 +67,6 @@
     </div>
 
     <!-- 底部部分 -->
-    <!-- <NewBottomList /> -->
     <BottomList />
   </div>
 </template>
@@ -74,14 +74,12 @@
 <script>
 // 获取主页背景图
 import Time from './components/Time' // 时间罗盘
-// import NewBottomList from './components/NewBottomList' // 底部图片文案
 import BottomList from './components/BottomList' // 底部图片文案
 import { mapState } from 'vuex' // 映射 vuex
 export default {
   name: 'homeIndex',
   components: {
     Time,
-    // NewBottomList
     BottomList
   },
   computed: {
@@ -119,6 +117,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// body, html, #app {
+//   background: url('./images/new背景.jpg');
+// }
 // 主页说明
 .bigExplain {
   background-image: url(https://api.wod.xyz/Image/GetImage?type=1);
