@@ -35,10 +35,18 @@
               />
 
               <!-- 添加表情 -->
-              <i
-                class="tyh tyh-biaoqing"
-                title="插入表情"
-              />
+              <at-popover placement="bottom" title="选择表情">
+                <i
+                  class="tyh tyh-biaoqing"
+                  title="插入表情"
+                />
+
+                <template slot="content">
+                  <Expression
+                    @addCode="changeCode"
+                  />
+                </template>
+              </at-popover>
 
               <!-- 选择字体颜色 -->
               <el-color-picker
@@ -100,16 +108,19 @@ import { mapState } from 'vuex'
 // 获取评论留言列表
 import { getCommitList } from '@/api/article'
 // 引入 at-ui 组件
-import { Card, Button, Message, LoadingBar } from 'at-ui'
+import { Card, Button, Message, LoadingBar, Popover } from 'at-ui'
 // 本地存储方法
 import { getStorage } from '@/utils/storage'
+import Expression from './components/Expression'
 Vue.use(Card)
 Vue.use(Button)
+Vue.use(Popover)
 Vue.prototype.$Loading = LoadingBar
 export default {
   name: 'commentIndex',
   components: {
-    FooterList
+    FooterList, // 页脚
+    Expression // 表情
   },
   props: {},
   data () {
@@ -207,6 +218,12 @@ export default {
       const file = this.$refs['upImg-Inp']
       const blob = window.URL.createObjectURL(file.files[0])
       this.commentList.backgroundImg = blob
+    },
+    // 获取到传递来的表情编码
+    changeCode (code) {
+      console.log(code)
+      // 将表情编码添加到文本框中
+      this.commentList.comment = this.commentList.comment + code
     }
   }
 }
@@ -314,5 +331,9 @@ export default {
       }
     }
   }
+}
+// 表情弹出框
+/deep/ .at-popover__popper {
+  width: 500px;
 }
 </style>
