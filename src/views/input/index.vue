@@ -18,6 +18,16 @@
         <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
       </el-form-item>
     </el-form>
+
+    <at-card style="width: 300px;">
+      <h4 slot="title">Card Title</h4>
+      <div slot="extra"><a>Extra</a></div>
+      <div>
+        <img src="../comment/images/emoji表情/1.png">
+      </div>
+    </at-card>
+
+    <div v-html="images"></div>
   </div>
 </template>
 
@@ -25,12 +35,15 @@
 import Vue from 'vue'
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+import { Card } from 'at-ui'
 Vue.use(mavonEditor)
+Vue.use(Card)
 export default {
   name: 'inputIndex',
   data () {
     return {
       value: '',
+      images: `<img src="${require('../comment/images/emoji表情/1.png')}">`,
       ruleForm: {
         pass: '',
         checkPass: '',

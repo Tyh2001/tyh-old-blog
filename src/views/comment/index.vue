@@ -87,14 +87,15 @@
               <h4 slot="title">{{ commentList.time }}</h4>
               <div slot="extra">{{ commentList.username }}</div>
               <div :style="{'color': commentList.textColor}">
-                {{ commentList.comment }}
+                <!-- {{ tranRes(commentList.comment) }} -->
+                <span v-html="tranRes(commentList.comment)"></span>
               </div>
             </at-card>
           </div>
         </div>
       </div>
     </div>
-
+    <img src="./images/emoji表情/1.png" alt="">
     <FooterList />
   </div>
 </template>
@@ -175,37 +176,38 @@ export default {
       this.btndisabled = true
       // 如果有内容 就执行发布操作
       if (this.commentList.comment !== '') {
-        const backgroundImg = this.commentList.backgroundImg
-        const comment = this.commentList.comment
-        const time = this.commentList.time
-        const username = this.commentList.username
-        const textColor = this.commentList.textColor
-
-        const res = {
-          backgroundImg,
-          comment,
-          time,
-          username,
-          textColor
+        // 对象可用
+        const clonCommentList = {}
+        for (const key in this.commentList) {
+          clonCommentList[key] = this.commentList[key]
         }
 
-        // 将新的内容添加到的数组的首个
-        this.commentLists.unshift(res)
+        console.log(`表情转译前是：${clonCommentList.comment}`)
+        // const tranRes = clonCommentList.comment.replace(
+        //   /\[em_([0-9]*)\]/gi,
+        //   '<img src="./images/emoji表情/$1.png">'
+        // )
 
-        this.$Loading.finish()
+        // console.log(`表情转译后是：${tranRes}`)
+        // clonCommentList.comment = tranRes
+        // 将新的内容添加到的数组的首个
+        this.commentLists.unshift(clonCommentList)
 
         // 发布完成之后清除图片地址和文字内容
         this.commentList.backgroundImg = ''
         this.commentList.comment = ''
         this.commentList.textColor = '#000000'
+
+        // 发布成功显示成功提示
         Message.success({
           message: '评论成功',
           duration: 1000
         })
+
+        // 接触按钮禁用状态
         this.btndisabled = false
       } else {
-        this.$Loading.error()
-        // 否则弹出提示框
+        // 否则弹出失败提示框
         Message.error({
           message: '内容为空不能发布',
           duration: 1000
@@ -220,10 +222,18 @@ export default {
       this.commentList.backgroundImg = blob
     },
     // 获取到传递来的表情编码
-    changeCode (code) {
-      console.log(code)
+    changeCode (code, index) {
       // 将表情编码添加到文本框中
       this.commentList.comment = this.commentList.comment + code
+      // console.log(`索引值是${index}`)
+    },
+    // 表情转译后的结果
+    tranRes (comment) {
+      const tranRes = comment.replace(
+        /\[em_([0-9]*)\]/gi,
+        `<img src="${require('./images/emoji表情/1.png')}">`
+      )
+      return tranRes
     }
   }
 }
@@ -294,6 +304,11 @@ export default {
           background-position: center;
           background-size: cover;
           font-weight: 600;
+          /deep/ .at-card__body {
+            img {
+              vertical-align: middle;
+            }
+          }
         }
       }
       .item:hover {

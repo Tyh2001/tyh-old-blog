@@ -6,7 +6,7 @@
         :key="index"
         :alt="Expression.code"
         :title="Expression.title"
-        @click="$emit('addCode', Expression.code)"
+        @click="$emit('addCode', Expression.code, index)"
       >
         <img :src="Expression.url" alt="">
       </li>
