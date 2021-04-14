@@ -95,7 +95,6 @@
         </div>
       </div>
     </div>
-    <img src="./images/emoji表情/1.png" alt="">
     <FooterList />
   </div>
 </template>
