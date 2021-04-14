@@ -9,6 +9,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import 'at-ui-style'
+import './utils/console.js'
 
 Vue.use(ElementUI)
 
