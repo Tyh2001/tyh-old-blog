@@ -1,5 +1,8 @@
 <template>
   <div id="articleIndex">
+
+    <TopImage />
+
     <el-tabs type="border-card">
       <!-- Vue相关 -->
       <el-tab-pane label="Vue相关">
@@ -10,7 +13,7 @@
             :title="vueDoc.title"
             :name="index + 1"
           >
-            <p>更新时间：{{vueDoc.time }}</p>
+            <p class="changeTime">发布时间：{{vueDoc.time }}</p>
             <mavon-editor v-model="vueDoc.content"/>
           </el-collapse-item>
         </el-collapse>
@@ -25,7 +28,7 @@
             :title="jsDoc.title"
             :name="index + 1"
           >
-            <p>更新时间：{{jsDoc.time }}</p>
+            <p class="changeTime">发布时间：{{jsDoc.time }}</p>
             <mavon-editor v-model="jsDoc.content"/>
           </el-collapse-item>
         </el-collapse>
@@ -40,7 +43,7 @@
             :title="otherDoc.title"
             :name="index + 1"
           >
-            <p>更新时间：{{otherDoc.time }}</p>
+            <p class="changeTime">发布时间：{{otherDoc.time }}</p>
             <mavon-editor v-model="otherDoc.content"/>
           </el-collapse-item>
         </el-collapse>
@@ -62,12 +65,12 @@ import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 // 映射 vuex
 import { mapState } from 'vuex'
+import TopImage from './components/TopImage'
 Vue.use(mavonEditor)
 export default {
   name: 'articleIndex',
-  computed: {
-    // 获取到 vuex 中主题状态
-    ...mapState(['theme'])
+  components: {
+    TopImage
   },
   data () {
     return {
@@ -75,6 +78,10 @@ export default {
       jsDocs: {}, // 获取Js技术文章
       otherDocs: {} // 获取其他技术文章
     }
+  },
+  computed: {
+    // 获取到 vuex 中主题状态
+    ...mapState(['theme'])
   },
   created () {
     this.loadgetVueDoc() // 获取Vue技术文章
@@ -103,12 +110,19 @@ export default {
 
 <style lang="less" scoped>
 #articleIndex {
-  margin-top: 15px;
   padding-bottom: 50px;
+  .changeTime {
+    color: rgb(151, 151, 151);
+    margin: 10px 0 20px 0;
+  }
 }
 .el-tabs {
   width: 800px;
   margin: auto;
+  margin-top: 20px;
+}
+/deep/ .el-collapse-item__header {
+  font-size: 15px;
 }
 // 下下面为富文本编辑器需要移除的样式
 /deep/ .v-note-edit,
