@@ -1,7 +1,7 @@
 <template>
   <div id="loginIndex">
     <kinesis-container>
-      <kinesis-element :strength="4" type="depth">
+      <kinesis-element :strength="5" type="depth">
         <div id="loginBox">
           <!-- 头像 -->
           <div class="photo">

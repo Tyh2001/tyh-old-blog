@@ -121,8 +121,17 @@
             />
           </div>
           <span slot="footer" class="dialog-footer">
-            <el-button @click="photoDialog = false">取 消</el-button>
-            <el-button type="primary" @click="photoDialog = false">确 定</el-button>
+            <el-button
+              @click="photoDialog = false"
+            >
+              取 消
+            </el-button>
+            <el-button
+              type="primary"
+              @click="confirmChangePhoto"
+            >
+              确 定
+            </el-button>
           </span>
         </el-dialog>
       </div>
@@ -146,7 +155,8 @@ export default {
       UserForm: {}, // 用户信息
       selectData: {}, // 下拉菜单数据
       photoDialog: false, // 上传头像的对话框显示状态
-      photoBlob: null // 需要裁切的图片
+      photoBlob: null, // 需要裁切的图片
+      cropper: null // 裁切器实例
     }
   },
   computed: {
@@ -169,7 +179,7 @@ export default {
     // 对话框完全展示出来后 初始化裁切器
     onOpenedPhoto () {
       const image = this.$refs['user-photo']
-      this.Cropper = new Cropper(image, {
+      this.cropper = new Cropper(image, {
         aspectRatio: 1 / 1,
         viewMode: 1, // 裁切框不能移出图片范围
         dragMode: 'none' // 背景画布禁止移动
@@ -194,6 +204,15 @@ export default {
           this.UserForm = data[key].userInfo
         }
       }
+    },
+    // 点击确定时 获取裁切的内容
+    confirmChangePhoto () {
+      this.cropper.getCroppedCanvas().toBlob(filePhoto => {
+        this.UserForm.userPhoto = filePhoto
+
+        // 关闭对话框
+        this.photoDialog = false
+      })
     }
   }
 }
