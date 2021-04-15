@@ -87,7 +87,6 @@
               <h4 slot="title">{{ commentList.time }}</h4>
               <div slot="extra">{{ commentList.username }}</div>
               <div :style="{'color': commentList.textColor}">
-                <!-- {{ tranRes(commentList.comment) }} -->
                 <span v-html="tranRes(commentList.comment)"></span>
               </div>
             </at-card>
@@ -181,14 +180,6 @@ export default {
           clonCommentList[key] = this.commentList[key]
         }
 
-        console.log(`表情转译前是：${clonCommentList.comment}`)
-        // const tranRes = clonCommentList.comment.replace(
-        //   /\[em_([0-9]*)\]/gi,
-        //   '<img src="./images/emoji表情/$1.png">'
-        // )
-
-        // console.log(`表情转译后是：${tranRes}`)
-        // clonCommentList.comment = tranRes
         // 将新的内容添加到的数组的首个
         this.commentLists.unshift(clonCommentList)
 
@@ -224,7 +215,6 @@ export default {
     changeCode (code, index) {
       // 将表情编码添加到文本框中
       this.commentList.comment = this.commentList.comment + code
-      // console.log(`索引值是${index}`)
     },
     // 表情转译后的结果
     tranRes (comment) {

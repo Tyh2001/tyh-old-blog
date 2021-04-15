@@ -31,15 +31,25 @@
               @change="swithcChange"
             />
           </el-dropdown-item>
+
+          <!-- 关于我 -->
+          <el-dropdown-item
+            @click.native="drawerShow = true"
+          >
+            About me
+          </el-dropdown-item>
+
           <!-- 设置 -->
           <el-dropdown-item
             @click.native="$router.push('/setting')"
           >
             设置
           </el-dropdown-item>
+
           <!-- 退出登录 -->
           <el-dropdown-item
             @click.native="outLogin"
+            style="color: rgb(245, 108, 108)"
           >
             退出登录
           </el-dropdown-item>
@@ -55,20 +65,35 @@
         请登录
       </span>
     </div>
+
+    <!-- 关于我的抽屉 -->
+    <el-drawer
+      :visible.sync="drawerShow"
+      direction="ltr"
+      :append-to-body="true"
+      :modal-append-to-body="false"
+    >
+      <Drawer />
+    </el-drawer>
   </div>
 </template>
 
 <script>
 import { Message } from 'at-ui'
 import { mapState } from 'vuex' // 映射 vuex
+import Drawer from './Drawer'
 export default {
   name: 'AboutMe',
+  components: {
+    Drawer
+  },
   computed: {
     ...mapState(['userInfo']) // 用户信息
   },
   data () {
     return {
-      theme: this.$store.state.theme // 主题状态
+      theme: this.$store.state.theme, // 主题状态
+      drawerShow: true // 关于我的抽屉展示
     }
   },
   methods: {

@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#layoutIndex {
+  user-select: none;
+}
 .el-menu.el-menu--horizontal {
   border: 0;
 }
