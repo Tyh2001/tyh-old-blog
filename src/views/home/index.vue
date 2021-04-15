@@ -118,7 +118,7 @@ export default {
 
 <style lang="less" scoped>
 #homeIndex {
-  background: url('./images/new背景.jpg') no-repeat;
+  background: url('./images/背景 (3).jpg') no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
