@@ -93,7 +93,7 @@ export default {
   data () {
     return {
       theme: this.$store.state.theme, // 主题状态
-      drawerShow: true // 关于我的抽屉展示
+      drawerShow: false // 关于我的抽屉展示
     }
   },
   methods: {

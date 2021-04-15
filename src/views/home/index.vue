@@ -117,9 +117,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// body, html, #app {
-//   background: url('./images/new背景.jpg');
-// }
+#homeIndex {
+  width: 100%;
+  height: 100%;
+  background: url('./images/new背景.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 // 主页说明
 .bigExplain {
   background-image: url(https://api.wod.xyz/Image/GetImage?type=1);
