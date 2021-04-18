@@ -1,8 +1,6 @@
 <template>
   <div id="articleIndex">
 
-    <!-- <TopImage /> -->
-
     <el-tabs type="border-card">
       <!-- Vue相关 -->
       <el-tab-pane label="Vue相关">
@@ -65,7 +63,6 @@ import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 // 映射 vuex
 import { mapState } from 'vuex'
-// import TopImage from './components/TopImage'
 Vue.use(mavonEditor)
 export default {
   name: 'articleIndex',
