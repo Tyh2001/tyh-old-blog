@@ -73,7 +73,13 @@
       :append-to-body="true"
       :modal-append-to-body="false"
     >
-      <Drawer />
+      <!-- 我的头像 -->
+      <div class="muPhoto-Bpx"></div>
+
+      <h1 class="MyUserName">俱往矣i</h1>
+
+      <!-- 个性签名 -->
+      <p class="autograph">最怕你一生碌碌无为，还安慰自己平凡可贵。</p>
     </el-drawer>
   </div>
 </template>
@@ -81,12 +87,9 @@
 <script>
 import { Message } from 'at-ui'
 import { mapState } from 'vuex' // 映射 vuex
-import Drawer from './Drawer'
 export default {
   name: 'AboutMe',
-  components: {
-    Drawer
-  },
+  components: {},
   computed: {
     ...mapState(['userInfo']) // 用户信息
   },
@@ -155,6 +158,27 @@ export default {
   .pleaseOnLogin {
     font-size: 15px;
     color: #dfdfdf;
+  }
+}
+.el-drawer {
+  .muPhoto-Bpx {
+    width: 100px;
+    height: 100px;
+    background: url('http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH*eweuL31n36RYREYa561J4!/r') no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin: auto;
+  }
+  // 我的昵称
+  .MyUserName {
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(35, 40, 45);
+  }
+  // 个性签名
+  .autograph {
+    margin-top: 10px;
+    text-align: center;
   }
 }
 </style>
