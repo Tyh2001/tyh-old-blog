@@ -11,6 +11,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'at-ui-style'
 import './utils/console.js'
 
+// import { onTime } from './utils/day'
+// console.log(onTime('2021-01-28 00:00'))
+
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

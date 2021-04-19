@@ -80,6 +80,9 @@
 
       <!-- 个性签名 -->
       <p class="autograph">最怕你一生碌碌无为，还安慰自己平凡可贵。</p>
+
+      <!-- 网页制作时间计算 -->
+      <p class="pageTime">此网站已强行运行了：{{ pageTime }}</p>
     </el-drawer>
   </div>
 </template>
@@ -87,6 +90,7 @@
 <script>
 import { Message } from 'at-ui'
 import { mapState } from 'vuex' // 映射 vuex
+import { onTime } from '@/utils/day'
 export default {
   name: 'AboutMe',
   components: {},
@@ -96,8 +100,14 @@ export default {
   data () {
     return {
       theme: this.$store.state.theme, // 主题状态
-      drawerShow: false // 关于我的抽屉展示
+      drawerShow: false, // 关于我的抽屉展示
+      pageTime: null
     }
+  },
+  mounted () {
+    setInterval(() => {
+      this.pageTime = onTime('2021-01-28 00:00')
+    }, 1000)
   },
   methods: {
     // 改变主题背景
@@ -160,7 +170,8 @@ export default {
     color: #dfdfdf;
   }
 }
-.el-drawer {
+/deep/ .el-drawer {
+  min-width: 300px !important;
   .muPhoto-Bpx {
     width: 100px;
     height: 100px;
@@ -176,7 +187,7 @@ export default {
     color: rgb(35, 40, 45);
   }
   // 个性签名
-  .autograph {
+  .autograph,.pageTime {
     margin-top: 10px;
     text-align: center;
   }
