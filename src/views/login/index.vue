@@ -7,7 +7,7 @@
             <!-- 头像 -->
             <div class="photo">
               <img
-                src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH.WlbL0Nrtw5DOpFddNOqa0!/r"
+                src="https://www.hualigs.cn/image/608132a6c15b2.jpg"
                 @click="$router.push('/')"
               >
             </div>
@@ -136,7 +136,7 @@ export default {
 #loginIndex {
   width: 100%;
   height: 100%;
-  background: url('./images/背景 (1).jpg') no-repeat;
+  background: url(https://www.hualigs.cn/image/60813157e82eb.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

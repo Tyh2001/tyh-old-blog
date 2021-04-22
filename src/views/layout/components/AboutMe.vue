@@ -175,7 +175,7 @@ export default {
   .muPhoto-Bpx {
     width: 100px;
     height: 100px;
-    background: url('http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH*eweuL31n36RYREYa561J4!/r') no-repeat;
+    background: url(https://www.hualigs.cn/image/608132a6c15b2.jpg) no-repeat;
     background-size: cover;
     border-radius: 50%;
     margin: auto;

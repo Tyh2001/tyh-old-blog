@@ -9,8 +9,8 @@
       <p class="listE1">" man man lai ba, shei dou you nu li de guo cheng. "</p>
       <img
         class="image1"
-        src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1Wn8LQ8L7IVMuua*LlMq7yHuu6mKZBpXmmaS1ETexiFkjx3dIJt7dMUgYPezer2UMg!/r"
-      >
+        src="https://www.hualigs.cn/image/608133fb1c409.jpg"
+      />
     </div>
 
     <!-- 第二段内容 -->
@@ -21,8 +21,8 @@
       </div>
       <div class="picture">
         <img
-          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1UCYxNno0ntbLq9bxHtzwI9rCc.1BaitjaxqnbIC3gnXaOJBMDcAjmUyxATfBlTNPs!/r"
-        >
+          src="https://www.hualigs.cn/image/608133fb4d158.jpg"
+        />
       </div>
     </div>
 
@@ -30,8 +30,8 @@
     <div class="content">
       <div class="picture">
         <img
-          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcYfg3ivNQUJOyEpgSEn4e1V2jp9MjMDCrmmRsE3MBuRdxDTthIySfocYA4zWVEvk5FmYrzz4ugotqg0.0OVFcfM!/r"
-        >
+          src="https://www.hualigs.cn/image/608133fb65e95.jpg"
+        />
       </div>
       <div class="words">
         <h1 class="listC3">“ 愿我最爱的人，也最爱我 ”</h1>
@@ -46,8 +46,8 @@
         <p class="listE4">" zui pa ni yi sheng lu lu wu wei, hai an wei zi ji ping fan ke gui "</p>
         <img
           class="picture-4"
-          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcfnLIouOSdqNmrw8IdvbnZbonou3sEgQbHPgAm0peQ39SljnyFXpNNaSZQLkzIIvijBI*PoIyyILYeCHRj5RhWk!/r"
-        >
+          src="https://www.hualigs.cn/image/608133fb4e802.jpg"
+        />
       </div>
     </div>
 

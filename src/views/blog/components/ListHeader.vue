@@ -7,8 +7,8 @@
       <div class="photoBox">
         <img
           class="userPhoto"
-          src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH*eweuL31n36RYREYa561J4!/r"
-        >
+          src="https://www.hualigs.cn/image/608132a6c15b2.jpg"
+        />
       </div>
       <div class="info">
         <p class="nickName">俱往矣i</p>

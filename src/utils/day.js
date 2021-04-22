@@ -1,7 +1,8 @@
 /**
  * 格式化时间
+ * @param {String} time 要计算的开始时间 格式如：2021-01-28 00:00
+ * @returns
  */
-
 export const onTime = (time) => {
   const nowStamp = new Date().getTime()
   const targetStamp = new Date(time).getTime()

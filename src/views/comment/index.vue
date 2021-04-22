@@ -233,7 +233,7 @@ export default {
 .topBackground {
   width: 100%;
   height: 260px;
-  background: url("./images/4dvzl4.jpg") no-repeat;
+  background: url(https://www.hualigs.cn/image/6081363add1cd.jpg) no-repeat;
   background-position: center;
   background-size: cover;
 }

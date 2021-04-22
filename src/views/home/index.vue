@@ -7,7 +7,7 @@
         <div class="PhotoBox">
           <img
             class="myPhoto"
-            src="http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ1pM1IO/45NBuzDIW489QBoVep5mcQy2B2YFlT1RLRHihM9ad7lpFJGoQQE5khd*kn0j*bnbIzPkplEqpg*mdY5SN4ozH*eweuL31n36RYREYa561J4!/r"
+            src="https://www.hualigs.cn/image/608132a6c15b2.jpg"
           >
           <div class="title">
             <h1>Hi,前端伙伴！</h1>
@@ -118,7 +118,7 @@ export default {
 
 <style lang="less" scoped>
 #homeIndex {
-  background: url('./images/背景 (3).jpg') no-repeat;
+  background: url(https://www.hualigs.cn/image/60813158349db.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
