@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { Message } from 'at-ui'
 import store from '@/store/'
+import Blog from '@/views/blog'
 
 Vue.use(VueRouter)
 
@@ -29,7 +30,7 @@ const routes = [
         path: '/blog',
         name: 'blog',
         // component: () => import('@/views/blog'),
-        component: '@/views/blog',
+        component: Blog,
         meta: { requiresAuth: true }
       },
       // 技术文章
