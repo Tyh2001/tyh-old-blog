@@ -28,7 +28,8 @@ const routes = [
       {
         path: '/blog',
         name: 'blog',
-        component: () => import('@/views/blog'),
+        // component: () => import('@/views/blog'),
+        component: '@/views/blog',
         meta: { requiresAuth: true }
       },
       // 技术文章
