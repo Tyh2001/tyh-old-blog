@@ -81,6 +81,28 @@
       <!-- 个性签名 -->
       <p class="autograph">最怕你一生碌碌无为，还安慰自己平凡可贵。</p>
 
+      <!-- 个人网站 -->
+      <div id="myWeb">
+        <a target="_blank" href="https://github.com/Tyh2001">
+          <i class="tyh tyh-huaban88" title="Github" />
+        </a>
+        <a target="_blank" href="https://gitee.com/tyh666999">
+          <i class="tyh tyh-mayun" title="Gitee" />
+        </a>
+        <a target="_blank" href="https://music.163.com/#/my/m/music/playlist?id=973798174">
+          <i class="tyh tyh-wangyiyunyinle" title="网易云音乐" />
+        </a>
+        <a target="_blank" href="https://www.zhihu.com/people/nan-gua-zui-kai-xin">
+          <i class="tyh tyh-zhihu" title="知乎" />
+        </a>
+        <a target="_blank" href="http://toutiaopc.tianyuhao.icu">
+          <i class="tyh tyh-wenzhang" title="文章发布后台管理系统" />
+        </a>
+        <a target="_blank" href="http://biaoqing.tianyuhao.icu">
+          <i class="tyh tyh-biaoqing1" title="表情发布系统" />
+        </a>
+      </div>
+
       <!-- 网页制作时间计算 -->
       <p class="pageTime">此网站已强行运行了：{{ pageTime }}</p>
     </el-drawer>
@@ -100,8 +122,8 @@ export default {
   data () {
     return {
       theme: this.$store.state.theme, // 主题状态
-      drawerShow: false, // 关于我的抽屉展示
-      pageTime: null
+      drawerShow: true, // 关于我的抽屉展示
+      pageTime: null // 网站制作的时间
     }
   },
   mounted () {
@@ -170,8 +192,10 @@ export default {
     color: #dfdfdf;
   }
 }
+// 抽屉
 /deep/ .el-drawer {
-  min-width: 300px !important;
+  min-width: 330px !important;
+  position: relative;
   .muPhoto-Bpx {
     width: 100px;
     height: 100px;
@@ -187,9 +211,60 @@ export default {
     color: rgb(35, 40, 45);
   }
   // 个性签名
-  .autograph,.pageTime {
+  .autograph {
     margin-top: 10px;
     text-align: center;
+  }
+  .pageTime {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 30px;
+    text-align: center;
+  }
+  // 图标
+  #myWeb {
+    width: 200px;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    i {
+      font-size: 20px;
+      color: rgb(51, 51, 61);
+      cursor: pointer;
+    }
+    // Gitgub
+    .tyh-huaban88:hover {
+      color: rgb(36, 41, 46);
+      transition: 0.27s;
+    }
+    // Gitee
+    .tyh-mayun:hover {
+      color: rgb(199, 29, 35);
+      transition: 0.27s;
+    }
+    // 网易云音乐
+    .tyh-wangyiyunyinle:hover {
+      color: rgb(194, 12, 12);
+      transition: 0.27s;
+    }
+    // 知乎
+    .tyh-zhihu:hover {
+      color: rgb(0, 102, 255);
+      transition: 0.27s;
+    }
+    // 文章发布后台管理系统
+    .tyh-wenzhang:hover {
+      color: rgb(64, 158, 255);
+      transition: 0.27s;
+    }
+    // 表情
+    .tyh-biaoqing1:hover {
+      color: rgb(255, 193, 41);
+      transition: 0.27s;
+    }
   }
 }
 </style>
