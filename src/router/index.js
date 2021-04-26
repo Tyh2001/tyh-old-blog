@@ -88,7 +88,7 @@ router.beforeEach((to, from, next) => {
     // 如果用户信息存在
     if (user) {
       // 如果方位的路径是 /blog 要校验身份权限
-      if (to.path === '/blog' || to.path === '/article') {
+      if (to.path === '/blog') {
         if (user.keyId === 'tyh') {
           return next()
         }
