@@ -1,5 +1,7 @@
 <template>
-  <div id="articleIndex">
+  <div
+    id="articleIndex"
+  >
 
     <el-tabs type="border-card">
       <!-- Vue相关 -->
@@ -66,9 +68,7 @@ import { mapState } from 'vuex'
 Vue.use(mavonEditor)
 export default {
   name: 'articleIndex',
-  components: {
-    // TopImage
-  },
+  components: {},
   data () {
     return {
       vueDocs: {}, // 获取Vue技术文章
@@ -107,7 +107,9 @@ export default {
 
 <style lang="less" scoped>
 #articleIndex {
+  // width: 100vw;
   padding-bottom: 50px;
+  // 说明的时间
   .changeTime {
     color: rgb(151, 151, 151);
     margin: 20px 0 30px 0;

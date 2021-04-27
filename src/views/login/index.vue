@@ -9,7 +9,7 @@
               <img
                 src="https://www.hualigs.cn/image/608132a6c15b2.jpg"
                 @click="$router.push('/')"
-              >
+              />
             </div>
 
             <p class="Welcome">Welcome to my website.</p>
