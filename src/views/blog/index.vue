@@ -8,7 +8,12 @@
     </el-backtop>
 
     <div class="video">
-      <video src="./video/背景视频.mp4" autoplay loop muted></video>
+      <video
+        src="./video/背景视频.mp4"
+        autoplay
+        loop
+        muted
+      />
     </div>
   </div>
 </template>
