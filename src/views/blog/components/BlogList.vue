@@ -1,7 +1,5 @@
 <template>
-  <div
-    id="BlogList"
-  >
+  <div id="BlogList">
     <div
       class="contentList"
       v-for="(list, index) in blogList"
@@ -12,10 +10,7 @@
           : 'background: #faf8ff;color: #32373c;'
       "
     >
-      <ListHeader
-        :index="index"
-        :blogList="blogList"
-      />
+      <ListHeader :index="index" :blogList="blogList" />
 
       <!-- 发布内容 -->
       <p class="content">{{ list.content }}</p>
@@ -33,8 +28,8 @@
       <!-- 点赞评论框 -->
       <div class="option">
         <div class="zan">
-           <i class="tyh tyh-zan" />
-           <span>25</span>
+          <i class="tyh tyh-zan" />
+          <span>25</span>
         </div>
         <div class="qipao">
           <i class="tyh tyh-qipao" />
@@ -114,7 +109,7 @@ export default {
   display: flex;
   flex-direction: row-reverse;
   margin-top: 15px;
-  div{
+  div {
     display: flex;
     justify-content: center;
     align-items: center;

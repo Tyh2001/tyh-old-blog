@@ -4,18 +4,8 @@
     <p class="errSay">This is not the web pagee you are looking for.</p>
     <p class="time">即将在 {{ time }} 秒后返回</p>
     <div class="back">
-      <p
-        class="returnHome"
-        @click="returnHome"
-      >
-        返回首页
-      </p>
-      <p
-        class="return"
-        @click="returnOut"
-      >
-        返回上一层
-      </p>
+      <p class="returnHome" @click="returnHome">返回首页</p>
+      <p class="return" @click="returnOut">返回上一层</p>
     </div>
     <FooterList />
   </div>
@@ -84,7 +74,7 @@ export default {
   display: flex;
   justify-content: space-around;
   .returnHome {
-    color: rgb(255,130,0);
+    color: rgb(255, 130, 0);
     cursor: pointer;
   }
   .return {

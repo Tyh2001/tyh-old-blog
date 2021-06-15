@@ -1,0 +1,66 @@
+#settingIndex {
+  width: 650px;
+  margin: 15px auto;
+  padding-bottom: 50px;
+}
+#settingIndex #HeaderInfo {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+#settingIndex #HeaderInfo .photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+#settingIndex #HeaderInfo .nameBox {
+  margin-left: 10px;
+}
+#settingIndex .userForm {
+  display: flex;
+}
+#settingIndex .userForm .info {
+  width: 450px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+#settingIndex .userForm .info .el-select {
+  width: 100%;
+}
+#settingIndex .userForm .info .el-button {
+  width: 100%;
+  border: none;
+  background: #2ea44f;
+}
+#settingIndex .userForm .info .outLogin {
+  background: #f3633f;
+}
+#settingIndex .userForm .userPhoto {
+  width: 200px;
+}
+#settingIndex .userForm .userPhoto .userImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid rgba(176, 226, 255, 0.5);
+}
+#settingIndex .userForm .userPhoto .changePhoto {
+  width: 50px;
+  height: 22px;
+  font-size: 12px;
+  border: 1px solid #c5c3c3;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  top: -25px;
+  right: -5px;
+}
+#settingIndex .userForm .userPhoto .changePhoto i {
+  font-size: 12px;
+}

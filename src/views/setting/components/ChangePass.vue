@@ -26,11 +26,7 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button
-            type="primary"
-            size="small"
-            @click="changePassWord"
-          >
+          <el-button type="primary" size="small" @click="changePassWord">
             更改密码
           </el-button>
         </el-form-item>
@@ -89,8 +85,8 @@ export default {
   },
   computed: {},
   watch: {},
-  created () {},
-  mounted () {},
+  created () { },
+  mounted () { },
   methods: {
     // 点击更改密码按钮
     changePassWord () {

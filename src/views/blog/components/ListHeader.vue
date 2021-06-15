@@ -58,7 +58,7 @@ export default {
           message: '删除成功！',
           duration: 900
         })
-      }).catch(() => {})
+      }).catch(() => { })
     }
   }
 }

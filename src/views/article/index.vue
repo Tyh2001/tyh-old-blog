@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="articleIndex"
-  >
-
+  <div id="articleIndex">
     <el-tabs type="border-card">
       <!-- Vue相关 -->
       <el-tab-pane label="Vue相关">
@@ -13,8 +10,8 @@
             :title="vueDoc.title"
             :name="index + 1"
           >
-            <p class="changeTime">发布时间：{{vueDoc.time }}</p>
-            <mavon-editor v-model="vueDoc.content"/>
+            <p class="changeTime">发布时间：{{ vueDoc.time }}</p>
+            <mavon-editor v-model="vueDoc.content" />
           </el-collapse-item>
         </el-collapse>
       </el-tab-pane>
@@ -28,8 +25,8 @@
             :title="jsDoc.title"
             :name="index + 1"
           >
-            <p class="changeTime">发布时间：{{jsDoc.time }}</p>
-            <mavon-editor v-model="jsDoc.content"/>
+            <p class="changeTime">发布时间：{{ jsDoc.time }}</p>
+            <mavon-editor v-model="jsDoc.content" />
           </el-collapse-item>
         </el-collapse>
       </el-tab-pane>
@@ -43,8 +40,8 @@
             :title="otherDoc.title"
             :name="index + 1"
           >
-            <p class="changeTime">发布时间：{{otherDoc.time }}</p>
-            <mavon-editor v-model="otherDoc.content"/>
+            <p class="changeTime">发布时间：{{ otherDoc.time }}</p>
+            <mavon-editor v-model="otherDoc.content" />
           </el-collapse-item>
         </el-collapse>
       </el-tab-pane>

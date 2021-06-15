@@ -8,7 +8,7 @@
         :title="Expression.title"
         @click="$emit('addCode', Expression.code, index)"
       >
-        <img :src="Expression.url" alt="">
+        <img :src="Expression.url" alt="" />
       </li>
     </ul>
   </div>
@@ -31,7 +31,7 @@ export default {
   created () {
     this.loadgetExpressionList() // 获取表情发布列表
   },
-  mounted () {},
+  mounted () { },
   methods: {
     // 获取表情发布列表
     async loadgetExpressionList () {

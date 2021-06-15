@@ -15,15 +15,17 @@
         <el-input type="password" v-model="ruleForm.checkPass"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        <el-button type="primary" @click="submitForm('ruleForm')"
+          >提交</el-button
+        >
       </el-form-item>
     </el-form>
 
-    <at-card style="width: 300px;">
+    <at-card style="width: 300px">
       <h4 slot="title">Card Title</h4>
       <div slot="extra"><a>Extra</a></div>
       <div>
-        <img src="../comment/images/emoji表情/1.png">
+        <img src="../comment/images/emoji表情/1.png" />
       </div>
     </at-card>
 

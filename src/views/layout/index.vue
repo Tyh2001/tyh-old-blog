@@ -23,7 +23,6 @@
       </el-menu>
     </div>
     <router-view />
-
   </div>
 </template>
 

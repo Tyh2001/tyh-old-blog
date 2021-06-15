@@ -46,24 +46,12 @@
             </div>
 
             <!-- 注册 -->
-            <div
-              class="registerBox"
-            >
+            <div class="registerBox">
               <p>没有账号？</p>
-              <p
-                class="addNumber"
-                @click="onRegister"
-              >
-                创建一个账户
-              </p>
+              <p class="addNumber" @click="onRegister">创建一个账户</p>
             </div>
 
-            <p
-              class="goHome"
-              @click="$router.push('/')"
-            >
-              返回首页
-            </p>
+            <p class="goHome" @click="$router.push('/')">返回首页</p>
           </div>
         </kinesis-element>
       </kinesis-container>
@@ -93,7 +81,7 @@ export default {
       loading: false // 按钮 loading
     }
   },
-  mounted () {},
+  mounted () { },
   methods: {
     // 登录
     async subonLogin () {
@@ -153,7 +141,8 @@ export default {
       width: 400px;
       height: 500px;
       background-color: #fff;
-      box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.3), 0 0 7px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.3),
+        0 0 7px 2px rgba(0, 0, 0, 0.15);
       padding: 30px;
       box-sizing: border-box;
       border-radius: 4px;

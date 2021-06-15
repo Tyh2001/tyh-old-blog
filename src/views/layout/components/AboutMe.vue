@@ -2,17 +2,10 @@
   <div id="AboutMe">
     <!-- 关于我 -->
     <div class="aboutMe">
-
       <!-- 下拉菜单 -->
-      <el-dropdown
-        v-if="userInfo !== null"
-        :hide-on-click="false"
-      >
+      <el-dropdown v-if="userInfo !== null" :hide-on-click="false">
         <span class="el-dropdown-link">
-          <img
-            class="photo"
-            :src="userInfo.userPhoto"
-          >
+          <img class="photo" :src="userInfo.userPhoto" />
           <span class="username">
             {{ userInfo.name }}
           </span>
@@ -33,16 +26,12 @@
           </el-dropdown-item>
 
           <!-- 关于我 -->
-          <el-dropdown-item
-            @click.native="drawerShow = true"
-          >
+          <el-dropdown-item @click.native="drawerShow = true">
             About me
           </el-dropdown-item>
 
           <!-- 设置 -->
-          <el-dropdown-item
-            @click.native="$router.push('/setting')"
-          >
+          <el-dropdown-item @click.native="$router.push('/setting')">
             设置
           </el-dropdown-item>
 
@@ -56,11 +45,7 @@
         </el-dropdown-menu>
       </el-dropdown>
 
-      <span
-        class="pleaseOnLogin"
-        v-else
-        @click="$router.push('login')"
-      >
+      <span class="pleaseOnLogin" v-else @click="$router.push('login')">
         <i class="el-icon-user" />
         请登录
       </span>
@@ -89,10 +74,16 @@
         <a target="_blank" href="https://gitee.com/tyh666999">
           <i class="tyh tyh-mayun" title="Gitee" />
         </a>
-        <a target="_blank" href="https://music.163.com/#/my/m/music/playlist?id=973798174">
+        <a
+          target="_blank"
+          href="https://music.163.com/#/my/m/music/playlist?id=973798174"
+        >
           <i class="tyh tyh-wangyiyunyinle" title="网易云音乐" />
         </a>
-        <a target="_blank" href="https://www.zhihu.com/people/nan-gua-zui-kai-xin">
+        <a
+          target="_blank"
+          href="https://www.zhihu.com/people/nan-gua-zui-kai-xin"
+        >
           <i class="tyh tyh-zhihu" title="知乎" />
         </a>
         <a target="_blank" href="http://toutiaopc.tianyuhao.icu">
@@ -151,7 +142,7 @@ export default {
           duration: 900
         })
         this.$router.push('/')
-      }).catch(() => {})
+      }).catch(() => { })
     }
   }
 }

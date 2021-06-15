@@ -1,11 +1,24 @@
 <template>
-  <div id="app">
+  <div>
     <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'app',
+  components: {},
+  props: {},
+  data () {
+    return {}
+  },
+  computed: {},
+  watch: {},
+  created () { },
+  mounted () { },
+  methods: {}
 }
 </script>
+
+<style lang='less' scoped>
+</style>

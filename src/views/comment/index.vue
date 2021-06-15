@@ -12,10 +12,7 @@
         <!-- 留言框 -->
         <h2>留言</h2>
         <div class="inputBox">
-          <el-input
-            type="textarea"
-            v-model="commentList.comment"
-          />
+          <el-input type="textarea" v-model="commentList.comment" />
           <div class="switchBox">
             <!-- 添加图片和表情的选项 -->
             <div class="switch">
@@ -36,15 +33,10 @@
 
               <!-- 添加表情 -->
               <at-popover placement="bottom" title="选择表情">
-                <i
-                  class="tyh tyh-biaoqing"
-                  title="插入表情"
-                />
+                <i class="tyh tyh-biaoqing" title="插入表情" />
 
                 <template slot="content">
-                  <Expression
-                    @addCode="changeCode"
-                  />
+                  <Expression @addCode="changeCode" />
                 </template>
               </at-popover>
 
@@ -81,12 +73,12 @@
             <at-card
               no-hover
               :style="{
-                'background-image': 'url(' + commentList.backgroundImg + ')'
+                'background-image': 'url(' + commentList.backgroundImg + ')',
               }"
             >
               <h4 slot="title">{{ commentList.time }}</h4>
               <div slot="extra">{{ commentList.username }}</div>
-              <div :style="{'color': commentList.textColor}">
+              <div :style="{ color: commentList.textColor }">
                 <span v-html="tranRes(commentList.comment)"></span>
               </div>
             </at-card>
@@ -162,7 +154,7 @@ export default {
   created () {
     this.loadgetCommitList() // 获取评论留言列表
   },
-  mounted () {},
+  mounted () { },
   methods: {
     // 获取评论留言列表
     async loadgetCommitList () {

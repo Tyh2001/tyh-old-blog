@@ -6,7 +6,7 @@
       <el-form class="info" :model="UserForm" size="small">
         <!-- 账号 -->
         <el-form-item label="账号">
-          <br>
+          <br />
           <p>{{ UserForm.userName }}</p>
         </el-form-item>
 
@@ -89,12 +89,9 @@
           class="userImg"
           :src="UserForm.userPhoto"
           @click="$refs['file-inp'].click()"
-        >
+        />
         <!-- 编辑按钮 -->
-        <div
-          class="changePhoto"
-          @click="$refs['file-inp'].click()"
-        >
+        <div class="changePhoto" @click="$refs['file-inp'].click()">
           <i class="tyh tyh-pan_icon" />
           编辑
         </div>
@@ -121,15 +118,8 @@
             />
           </div>
           <span slot="footer" class="dialog-footer">
-            <el-button
-              @click="photoDialog = false"
-            >
-              取 消
-            </el-button>
-            <el-button
-              type="primary"
-              @click="confirmChangePhoto"
-            >
+            <el-button @click="photoDialog = false"> 取 消 </el-button>
+            <el-button type="primary" @click="confirmChangePhoto">
               确 定
             </el-button>
           </span>
@@ -167,7 +157,7 @@ export default {
     this.loadgetSettingSelect() // 获取下拉菜单内容
     this.loadonLogin() // 获取下拉菜单内容
   },
-  mounted () {},
+  mounted () { },
   methods: {
     // 修改头像
     changePhoto () {

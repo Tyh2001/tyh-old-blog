@@ -8,7 +8,7 @@
           <img
             class="myPhoto"
             src="https://www.hualigs.cn/image/608132a6c15b2.jpg"
-          >
+          />
           <div class="title">
             <h1>Hi,前端伙伴！</h1>
             <div>—— 这是个还凑合的个人网站 ——</div>
@@ -25,10 +25,7 @@
       :style="theme ? 'background: #0d1117;' : 'background: #eceff1;'"
     >
       <!-- 新的一天 -->
-      <p
-        class="newDay"
-        :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
-      >
+      <p class="newDay" :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'">
         <span>“</span>
         A new day begins with npm run dev and npm run serve.
         <span>”</span>
@@ -36,21 +33,13 @@
 
       <!-- 三段话 -->
       <div class="say">
-        <div
-          class="sayData"
-          v-for="(say, index) in sayList"
-          :key="index"
-        >
+        <div class="sayData" v-for="(say, index) in sayList" :key="index">
           <fieldset>
-            <legend
-              :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
-            >
+            <legend :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'">
               {{ say.title }}
             </legend>
           </fieldset>
-          <p
-            :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'"
-          >
+          <p :style="theme ? 'color: #c9d1d9;' : 'color: #32373c;'">
             {{ say.content }}
           </p>
         </div>
@@ -139,7 +128,7 @@ export default {
   background-attachment: fixed;
   user-select: none;
   .explain {
-    background-image: url('./images/小黑点.png');
+    background-image: url("./images/小黑点.png");
     width: 100%;
     height: 450px;
     z-index: 200;
@@ -168,7 +157,7 @@ export default {
           font-weight: 800;
         }
         div {
-           font-size: 19px;
+          font-size: 19px;
         }
         h2 {
           color: #fff;
@@ -242,7 +231,7 @@ export default {
       animation: toBottom 2s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
-        @keyframes toBottom {
+      @keyframes toBottom {
         0% {
           margin-top: 0px;
         }

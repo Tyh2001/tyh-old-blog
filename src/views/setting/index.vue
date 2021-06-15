@@ -1,15 +1,11 @@
 <template>
   <div
     id="settingIndex"
-    :style="
-        theme
-          ? 'background: #0d1117;'
-          : 'background: #faf8ff;'
-      "
+    :style="theme ? 'background: #0d1117;' : 'background: #faf8ff;'"
   >
     <!-- 头部描述 -->
     <div id="HeaderInfo">
-      <img class="photo" :src="userInfo.userPhoto">
+      <img class="photo" :src="userInfo.userPhoto" />
       <div class="nameBox">
         <h2>{{ userInfo.name }}</h2>
         <p>您的基本账户信息</p>
@@ -55,7 +51,7 @@ export default {
   computed: {
     ...mapState(['userInfo', 'theme'])
   },
-  created () {},
+  created () { },
   methods: {
     // 退出登录
     outLogin () {
@@ -72,7 +68,7 @@ export default {
           duration: 900
         })
         this.$router.push('/')
-      }).catch(() => {})
+      }).catch(() => { })
     }
   }
 }
