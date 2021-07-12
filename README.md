@@ -1,6 +1,6 @@
 ### 在线网站
 
-http://tianyuhao.icu
+http://old.tianyuhao.icu
 
 
 ### 说明
