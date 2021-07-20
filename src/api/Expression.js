@@ -1,6 +1,4 @@
-/**
- * 表情相关
- */
+// 表情相关
 
 import request from '@/utils/request'
 

@@ -1,6 +1,4 @@
-/**
- * 用户相关
- */
+// 用户相关
 
 import request from '@/utils/request'
 
