@@ -71,6 +71,14 @@
         <a target="_blank" href="https://github.com/Tyh2001">
           <i class="tyh tyh-huaban88" title="Github" />
         </a>
+        <a target="_blank" href="http://tyhui.tianyuhao.icu">
+          <Tyh-icon
+            icon="tyh-ui-tyhui"
+            color="rgb(51,51,61)"
+            size="21"
+            title="tyh-ui"
+          />
+        </a>
         <a target="_blank" href="https://gitee.com/tyh666999">
           <i class="tyh tyh-mayun" title="Gitee" />
         </a>
@@ -255,6 +263,9 @@ export default {
     .tyh-biaoqing1:hover {
       color: rgb(255, 193, 41);
       transition: 0.27s;
+    }
+    .tyh-ui-tyhui:hover {
+      color: rgb(108, 99, 255) !important;
     }
   }
 }

@@ -1,5 +1,8 @@
 <template>
-  <div id="articleIndex">
+  <div
+    id="articleIndex"
+    :style="theme ? 'background: #0d1117;' : 'background: #eceff1;'"
+  >
     <el-tabs type="border-card">
       <!-- Vue相关 -->
       <el-tab-pane label="Vue相关">
@@ -104,7 +107,12 @@ export default {
 
 <style lang="less" scoped>
 #articleIndex {
-  // width: 100vw;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
   padding-bottom: 50px;
   // 说明的时间
   .changeTime {

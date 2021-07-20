@@ -56,7 +56,7 @@
 
     <!-- 返回顶部 -->
     <el-backtop>
-      <i class="tyh tyh-huojian" />
+      <Tyh-icon icon="tyh-ui-huojian-01" color="skyblue" />
     </el-backtop>
   </div>
 </template>
