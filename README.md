@@ -1,7 +1,3 @@
-# 在线网站
-
-http://old.tianyuhao.cn
-
 # 说明
 
 后台暂未开发
